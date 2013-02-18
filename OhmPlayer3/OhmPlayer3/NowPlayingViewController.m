@@ -255,7 +255,7 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
     NSDate *date    = [[NSDate alloc] initWithTimeInterval:interval sinceDate:now]; 
 
 	// Breakdown into hours, minutes and seconds.
-	NSCalendarUnit calendarUnits =  NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+	NSCalendarUnit calendarUnits =  (NSCalendarUnit)(NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit);
 	
 	NSDateComponents *dateComponents = [usersCalendar components:calendarUnits fromDate:now toDate:date options:0];
     
@@ -741,8 +741,6 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
             case TWTweetComposeViewControllerResultCancelled:
                 break;
             case TWTweetComposeViewControllerResultDone:
-                break;
-            default:
                 break;
         }
                 

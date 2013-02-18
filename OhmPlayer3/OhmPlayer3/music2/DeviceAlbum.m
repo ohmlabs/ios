@@ -148,8 +148,8 @@
 		// As a result of this observation, there's not much advantage to doing a lot of background work with the
 		// iPod music library; it doesn't improve the perceived performance and can actually slow things down on a uni-processor.
 		
-        NSString* aTitle        = [[mediaItemCollection representativeItem] valueForProperty:MPMediaItemPropertyAlbumTitle];
-        NSString* anArtistName  = [[mediaItemCollection representativeItem] valueForProperty:MPMediaItemPropertyAlbumArtist];
+        NSString* aTitle        = [[self->mediaItemCollection representativeItem] valueForProperty:MPMediaItemPropertyAlbumTitle];
+        NSString* anArtistName  = [[self->mediaItemCollection representativeItem] valueForProperty:MPMediaItemPropertyAlbumArtist];
  		
 		//NSMutableArray* allocatedSongs	= [self allocateSongs];
        
@@ -163,8 +163,8 @@
 						   // hence we throw away the most recent superfluous computation in favor preserving
 						   // pointer equality comparisons for existing callers.
 
-                           title = aTitle;
-                           artistName = anArtistName;
+                           self->title = aTitle;
+                           self->artistName = anArtistName;
 						   
 						   //if (!songs) songs = allocatedSongs;
                       });

@@ -10,7 +10,7 @@
 
 #pragma mark Protected Methods
 
-- (BOOL) createDirectoryAtPath:(NSString*)dirPath error:(NSError**)error
+- (BOOL) createDirectoryAtPath:(NSString*)dirPath error:(NSError* __autoreleasing *)error
 {
 	NSParameterAssert([dirPath length]);
     
@@ -23,7 +23,7 @@
 	return status;
 }
 
-- (BOOL) directoryExists:(NSString*)dirPath error:(NSError**)error
+- (BOOL) directoryExists:(NSString*)dirPath error:(NSError* __autoreleasing *)error
 {
 	NSParameterAssert([dirPath length]);
     
@@ -39,7 +39,7 @@
 
 #pragma mark Public Methods
 
-- (NSString*) pathToPlaylistsDirectory:(NSError**)error
+- (NSString*) pathToPlaylistsDirectory:(NSError* __autoreleasing *)error
 {
     static id cachedPlaylistDirectory = nil;
     

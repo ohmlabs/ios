@@ -113,15 +113,15 @@
 		// As a result of this observation, there's not much advantage to doing a lot of background work with the
 		// iPod music library; it doesn't improve the perceived performance and can actually slow things down on a uni-processor.
 
-        NSString* aTitle        = [mediaItem valueForProperty:MPMediaItemPropertyTitle];
-        NSString* anArtistName  = [mediaItem valueForProperty:MPMediaItemPropertyArtist];
-        NSString* anAlbumName   = [mediaItem valueForProperty:MPMediaItemPropertyAlbumTitle];
+        NSString* aTitle        = [self->mediaItem valueForProperty:MPMediaItemPropertyTitle];
+        NSString* anArtistName  = [self->mediaItem valueForProperty:MPMediaItemPropertyArtist];
+        NSString* anAlbumName   = [self->mediaItem valueForProperty:MPMediaItemPropertyAlbumTitle];
         
         dispatch_async(dispatch_get_main_queue(), ^
                        {
-                           title = aTitle;
-                           artistName = anArtistName;
-                           albumName = anAlbumName;
+                           self->title = aTitle;
+                           self->artistName = anArtistName;
+                           self->albumName = anAlbumName;
                        });
     });
 

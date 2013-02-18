@@ -80,8 +80,6 @@
 @end
 
 
-#define USE_PLAYLIST_ARTWORK 1
-
 static NSString* const PLAYLIST_SONG_CELL_REUSE_ID		= @"PlaylistCell";
 static NSString* const PLAYLIST_WIRE_CELL_REUSE_ID		= @"PlaylistWireCell";
 static NSString* const PLAYLIST_HEADER_VIEW				= @"ReadOnlyPlaylistHeaderView";

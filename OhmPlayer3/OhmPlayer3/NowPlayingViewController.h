@@ -17,30 +17,30 @@
 	NSTimer* playbackTimer;
 }
 
-@property (weak, nonatomic) IBOutlet UIView* volumeControlView;
-@property (weak, nonatomic) IBOutlet UIView* airplayControllView;
+@property (strong, nonatomic) IBOutlet UIView* volumeControlView;
+@property (strong, nonatomic) IBOutlet UIView* airplayControllView;
 
-@property (weak, nonatomic) IBOutlet UILabel* artistName;
-@property (weak, nonatomic) IBOutlet UILabel* songTitle;
-@property (weak, nonatomic) IBOutlet UILabel *timeRemaining;
-@property (weak, nonatomic) IBOutlet UILabel *timeElapsed;
-@property (weak, nonatomic) IBOutlet UILabel *songNumber;
-@property (weak, nonatomic) IBOutlet UISlider *playbackTimeSlider;
-@property (weak, nonatomic) IBOutlet UIButton *shuffleButton;
+@property (strong, nonatomic) IBOutlet UILabel* artistName;
+@property (strong, nonatomic) IBOutlet UILabel* songTitle;
+@property (strong, nonatomic) IBOutlet UILabel *timeRemaining;
+@property (strong, nonatomic) IBOutlet UILabel *timeElapsed;
+@property (strong, nonatomic) IBOutlet UILabel *songNumber;
+@property (strong, nonatomic) IBOutlet UISlider *playbackTimeSlider;
+@property (strong, nonatomic) IBOutlet UIButton *shuffleButton;
 
-@property (weak, nonatomic) IBOutlet UIView* albumArtView;
-@property (weak, nonatomic) IBOutlet UIView* addToQueueControl;
-@property (weak, nonatomic) IBOutlet UIView* popUpPlayerControls;
+@property (strong, nonatomic) IBOutlet UIView* albumArtView;
+@property (strong, nonatomic) IBOutlet UIView* addToQueueControl;
+@property (strong, nonatomic) IBOutlet UIView* popUpPlayerControls;
 
-@property (weak, nonatomic) IBOutlet UIGestureRecognizer* singleTapRecognizer;
-@property (weak, nonatomic) IBOutlet UIGestureRecognizer* doubleTapRecognizer;
+@property (strong, nonatomic) IBOutlet UIGestureRecognizer* singleTapRecognizer;
+@property (strong, nonatomic) IBOutlet UIGestureRecognizer* doubleTapRecognizer;
 
 @property (strong, nonatomic) NowPlayingTutorialViewController* tutorialController;
 
 - (IBAction)skipToPreviousItem;
 - (IBAction)play;
 - (IBAction)skipToNextItem;
-- (IBAction)sliderDidChange:(id)sender;
+- (IBAction)sliderDidChange:(UISlider*)sender;
 - (IBAction)compose:(id)sender;
 - (IBAction)search:(id)sender;
 - (IBAction)togglePlayerControls:(id)sender;

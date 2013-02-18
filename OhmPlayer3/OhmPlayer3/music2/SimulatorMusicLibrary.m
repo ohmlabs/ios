@@ -32,7 +32,7 @@
 	NSParameterAssert(anArtistName);
 	NSParameterAssert(songCounts && *songCounts);
 	
-	if (self = [super init])
+	if ((self = [super init]))
 	{
 		artistName = anArtistName;
 		

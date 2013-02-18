@@ -23,7 +23,7 @@
 	NSInteger selectedIndex;
 }
 
-@property (readonly) unichar selectedCharacter;
+@property (nonatomic, readonly) unichar selectedCharacter;
 
 // Set the unicode characters that should be displayed by this character index.
 - (void)setCharacters:(NSArray*)unicodeCharacters;

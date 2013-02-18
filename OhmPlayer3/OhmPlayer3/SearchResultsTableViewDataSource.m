@@ -299,7 +299,7 @@ static NSString* const PLACEHOLDER_ALBUM_IMAGE_NAME = @"default_album_artwork";
     
 	for (Artist *artist in allArtists)
 	{
-        NSRange range = [artist.name rangeOfString:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch)];
+        NSRange range = [artist.name rangeOfString:searchText options:(NSStringCompareOptions)(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch)];
         
         if (range.location != NSNotFound)
         {
@@ -309,7 +309,7 @@ static NSString* const PLACEHOLDER_ALBUM_IMAGE_NAME = @"default_album_artwork";
     
 	for (Album *album in allAlbums)
 	{
-        NSRange range = [album.title rangeOfString:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch)];
+        NSRange range = [album.title rangeOfString:searchText options:(NSStringCompareOptions)(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch)];
         
         if (range.location != NSNotFound)
         {
@@ -319,7 +319,7 @@ static NSString* const PLACEHOLDER_ALBUM_IMAGE_NAME = @"default_album_artwork";
     
 	for (Song *song in allSongs)
 	{
-        NSRange range = [song.title rangeOfString:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch)];
+        NSRange range = [song.title rangeOfString:searchText options:(NSStringCompareOptions)(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch)];
         
         if (range.location != NSNotFound)
         {

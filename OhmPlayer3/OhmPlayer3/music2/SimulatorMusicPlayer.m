@@ -15,7 +15,7 @@
 
 - (BOOL) hasQueuedSongs;
 - (BOOL) isPaused;
-- (void) setNowPlayingIndex:(NSInteger)i;
+- (void) setNowPlayingIndex:(NSUInteger)i;
 - (void) synchToPlaylist;
 - (void) unpause;
 - (NSArray*) songs;
