@@ -19,7 +19,7 @@
 
 @interface SelectPlaylistTableViewController : UITableViewController
 
-@property (nonatomic, assign) id<SelectPlaylistDelegate> selectPlaylistDelegate;
+@property (nonatomic, weak) id<SelectPlaylistDelegate> selectPlaylistDelegate;
 
 - (IBAction)cancel:(id)sender;
 
