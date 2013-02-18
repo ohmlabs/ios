@@ -1,0 +1,30 @@
+Ohm 
+App Store Text Final Draft (OHM-57)
+
+Instantly transform your iPod music library into a more attractive collection. With Ohm, you can choose "playlist artwork" to add a personal touch to the playlists that you create. Ohm takes the pain out of managing your music on-the-go by introducing a queue and easily allowing users to build playlists. Our app works with the music that you already have on your device, but very soon we will allow users to enjoy music from their favorite web services (YouTube, Soundcloud, etc). Simply put, Ohm is here to pick up where the iPod left off.
+
+Features: 
+
+*Home Screen*
+Your music remote. Navigate through your currently playing music with simple gesture controls (double-tap to pause, swipe left/right for next/last song). Add the current song to your queue or a playlist if you wish.
+
+*Sharing*
+Another great feature of the home screen is that Ohm users can share what song they're listening to on Twitter with just a click. Look for more sharing destinations in our next major update. 
+
+*Gallery*
+Ohm gives every artist in your library a single screen to display their discography. This screen also uses gestures- a press and hold gives you the options to add to a playlist or the queue- making it easier for users to curate their collections.
+
+*Queue*
+The queue allows users to select their upcoming music quickly and easily. If you like the queue you've built, you can save it as a new playlist. In addition to the press and hold gesture, simply swiping a song gives you a shortcut to adding to the queue.
+
+*Playlists*
+The heart of our app, it is here that you begin to make your musical collection your own by creating unique and personal playlists. We've added color to your existing iTunes playlists by default, and you can add photos manually  to personalize them even more.
+
+
+About:
+
+Ohm Music is the first project of Ohm Labs, a small corp of mobile engineers & designers obsessed with quality. It represents nearly a year and a half of intense design work and we see this as only the beginning. Stay in touch with us for news and updates at:
+
+http://ohmmusic.com
+http://facebook.com/ohmmusicapp
+http://twitter.com/ohmlabs

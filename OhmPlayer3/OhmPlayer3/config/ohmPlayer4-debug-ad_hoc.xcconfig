@@ -1,0 +1,3 @@
+#include "ohmPlayer4-debug.xcconfig"
+
+CODE_SIGN_IDENTITY = iPhone Distribution: Reggie Adkins

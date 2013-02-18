@@ -1,0 +1,16 @@
+The device IDs in DeviceIDs.txt were primarily derived from the Jan_12_Wave_1.mobileprovision provided by Chris Bennet in Jan 2012.
+
+I added my own device as well.
+
+The format is a tab separated format specified by Apple to allow bulk uploading of device IDs here (https://developer.apple.com/ios/manage/devices/howto.action).
+
+Note: the same device ID cannot be uploaded twice. The provisioning portal will report an error.
+
+I added the following IDs on Feb 28:
+
+03f6136c0b13ec17f551c27b61ae393320b32cfc	Luke Barbara iPhone 4S
+0eef3b32b43d14273ec12f4de0bbc85b2ceac777	Yasmine Hamdouche iPhone 3GS
+27ee19e58c4bcf74606dfc296b2351e0a792535a	Byron Patterson iPhone 4
+9d0194df5b5360b25288d8165e7795293ce99d3a	terry Bennett iPhone 4
+dffdb6681ebdd5298428eb870e27c9bf129214e6	George Burgess iPhone 4S
+ff0ec04f114a487aa3e5ce222ccca6cc3e9d080e	Quincy Savage iPhone 4S
