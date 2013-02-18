@@ -21,12 +21,6 @@ static NSString* const NOW_PLAYING_TUTORIAL_VC_STORYBOARD		= @"MainStoryboard";
     return self;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
 #pragma mark Action Methods
 
 - (IBAction)tapAction:(id)sender

@@ -23,12 +23,6 @@ static NSString* const PLAYLISTS_TUTORIAL_VC_STORYBOARD		= @"MainStoryboard";
     return self;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
 #pragma mark View Life Cycle
 
 - (void) viewDidLoad

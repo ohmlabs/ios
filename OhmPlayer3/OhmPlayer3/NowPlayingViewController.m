@@ -620,25 +620,6 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
     }
 }
 
-- (void) viewDidUnload
-{
-    [self setVolumeControlView:nil];
-    [self setAirplayControllView:nil];
-    [self setArtistName:nil];
-    [self setSongTitle:nil];
-    [self setAlbumArtView:nil];
-    [self setTimeRemaining:nil];
-    [self setTimeElapsed:nil];
-    [self setSongNumber:nil];
-    [self setPlaybackTimeSlider:nil];
-    [self setAddToQueueControl:nil];
-	[self setPopUpPlayerControls:nil];
-	[self setSingleTapRecognizer:nil];
-	[self setDoubleTapRecognizer:nil];
-	
-    [super viewDidUnload];
-}
-
 - (void) viewWillAppear:(BOOL)animated
 {	
 	[self registerForNotifications];
@@ -681,12 +662,6 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
 	[super viewDidDisappear:animated];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
 #pragma mark Actions
 
 - (IBAction)skipToPreviousItem
@@ -726,6 +701,8 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
 - (IBAction)compose:(id)sender
 {
     // Set up the built-in twitter composition view controller.
+    
+    // ISSUE: TWTweetComposeViewController has been  deprecated in iOS 6. Use SLComposeViewController (in the Social framework) instead.
     TWTweetComposeViewController *tweetViewController = [[TWTweetComposeViewController alloc] init];
     
     // Set the initial tweet text. See the framework for additional properties that can be set.
@@ -745,11 +722,11 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
         }
                 
         // Dismiss the tweet composition view controller. // Based on Apple Sample code, but still - is this safe to call from a background thread?
-        [self dismissModalViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }];
     
     // Present the tweet composition view controller modally.
-    [self presentModalViewController:tweetViewController animated:YES];
+    [self presentViewController:tweetViewController animated:YES completion:nil];
 }
 
 - (IBAction)search:(id)sender

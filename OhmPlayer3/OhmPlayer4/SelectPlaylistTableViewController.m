@@ -56,13 +56,6 @@ static NSString* const SELECT_PLAYLIST_VC_STORYBOARD		= @"MainStoryboard";
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
 	// The select playlist delegate MUST be set before displaying this view controller.
@@ -87,12 +80,6 @@ static NSString* const SELECT_PLAYLIST_VC_STORYBOARD		= @"MainStoryboard";
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark UITableViewDataSource Methods

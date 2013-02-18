@@ -70,8 +70,8 @@
 		label.font = [OhmAppearance characterIndexFont];
 		
 		label.text = [unicodeCharacters objectAtIndex:i];
-		label.textAlignment = UITextAlignmentCenter;
-		label.minimumFontSize = MinimumFontSize;
+		label.textAlignment = NSTextAlignmentCenter;
+		//label.minimumFontSize = MinimumFontSize;
 		label.adjustsFontSizeToFitWidth = YES;
 		label.userInteractionEnabled = YES;
 		label.multipleTouchEnabled = NO;

@@ -413,12 +413,6 @@ static NSString* const USER_DEFAULTS_QUEUE_TUTORIAL_WAS_SEEN = @"USER_DEFAULTS_Q
     [super viewWillDisappear:animated];
 }
 
-- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
 - (void) setEditing:(BOOL)editing animated:(BOOL)animated
 {    
     [super setEditing:editing animated:animated];

@@ -541,9 +541,9 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
 	label.font					= font;
 	label.textColor				= textColor;
 	label.backgroundColor		= backgroundColor;
-	label.textAlignment			= UITextAlignmentCenter;
-	label.lineBreakMode			= UILineBreakModeTailTruncation;
-	label.minimumFontSize		= ARTIST_CELL_FONTSIZE_MIN;
+	label.textAlignment			= NSTextAlignmentCenter;
+	label.lineBreakMode			= NSLineBreakByTruncatingTail;
+	//label.minimumFontSize		= ARTIST_CELL_FONTSIZE_MIN;
 	label.adjustsFontSizeToFitWidth = YES;
   
 #if SHOW_CELL_SELECTION_FOR_DEBUGGING
@@ -1288,8 +1288,6 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
         
     [self setUpAlbumTableView];
     
-	[self registerForNotifications];
-		
 	[self setUpCharacterIndex];
     
     [self setUpNavBar];
@@ -1299,6 +1297,8 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
 
 - (void) viewWillAppear:(BOOL)animated
 {	        
+    [self registerForNotifications];
+
     const BOOL restoredArtist = [self restoreSavedArtist];
     
     [self restoreSavedAlbum];
@@ -1320,6 +1320,8 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
 	[self setSavedArtist];
 	
 	[self setSavedAlbum];
+    
+    [self unregisterForNotifications];
 
 	[super viewWillDisappear:animated];
 }
@@ -1331,28 +1333,6 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
 	[self.artistGallery flashScrollIndicators];
 	[self.albumGallery flashScrollIndicators];
 	[self.songsTableView flashScrollIndicators];
-}
-
-- (void)viewDidUnload
-{
-	[self unregisterForNotifications];
-
-	[self setArtistGallery:nil];
-	[self setAlbumGallery:nil];
-	[self setSongsTableView:nil];
-	[self setAlbumTitleLabel:nil];
-	[self setPrototypeAlbumCell:nil];
-	[self setCharacterIndex:nil];
-	
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark - Actions

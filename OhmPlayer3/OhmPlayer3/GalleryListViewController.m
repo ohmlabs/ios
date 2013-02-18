@@ -556,27 +556,6 @@ static const CGFloat DEFAULT_TABLEVIEWCELL_HEIGHT	= 44.0F;
 	[super viewDidDisappear:animated];
 }
 
-- (void) viewDidLoad
-{
-	[super viewDidLoad];
-}
-
-- (void)viewDidUnload
-{
-	[self setTabBar:nil];
-	[self setTableView:nil];
-	
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {	
 	// Note: there are multiple identical segues from cells to the gallery view in the storyboard.

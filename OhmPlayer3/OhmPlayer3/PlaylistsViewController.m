@@ -302,9 +302,9 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
 	label.text				= playlist.name;
 	label.font				= font;
 	label.textColor			= textColor;
-	label.textAlignment		= UITextAlignmentLeft;
-	label.lineBreakMode		= UILineBreakModeTailTruncation;
-	label.minimumFontSize	= CELL_FONTSIZE_MIN;
+	label.textAlignment		= NSTextAlignmentLeft;
+	label.lineBreakMode		= NSLineBreakByTruncatingTail;
+	//label.minimumFontSize	= CELL_FONTSIZE_MIN;
     }
 
 #endif
@@ -994,24 +994,6 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
 	NSParameterAssert(wire);
 }
 
-- (void) viewDidUnload
-{
-	[self setWire:nil];
-	[self setTableView:nil];
-	[self setPlaylistHeaderView:nil];
-	[self setOhmPlaylistHeaderView:nil];
-	
-	compositePlaylists = nil;
-	
-	[super viewDidUnload];
-}
-
-- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
 #pragma mark UIAlertView Delegate Methods - Protected
 
 - (NSString*) newPlaylistName
@@ -1277,7 +1259,7 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
     
     imagePickerController.delegate = self;
     
-    [self presentModalViewController:imagePickerController animated:YES];
+    [self presentViewController:imagePickerController animated:YES completion:nil];
 }
 
 - (IBAction) choosePhoto:(id)sender
@@ -1301,7 +1283,7 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
     
     imagePickerController.delegate = self;
     
-    [self presentModalViewController:imagePickerController animated:YES];
+    [self presentViewController:imagePickerController animated:YES completion:nil];
 }
 
 - (IBAction) removePhoto:(id)sender
@@ -1629,7 +1611,7 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
         }
     }
     
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
