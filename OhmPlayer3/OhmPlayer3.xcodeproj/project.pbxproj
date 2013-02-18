@@ -129,6 +129,7 @@
 		DE405088152E618700505CED /* nav_bar_banner_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE405086152E618700505CED /* nav_bar_banner_home@2x.png */; };
 		DE40508B152E621200505CED /* artist_scroll_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE405089152E621200505CED /* artist_scroll_background@2x.png */; };
 		DE40508F152E677A00505CED /* tweet.png in Resources */ = {isa = PBXBuildFile; fileRef = DE40508D152E677A00505CED /* tweet.png */; };
+		DE45C6C916D2D94200C321E8 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE45C6C816D2D94000C321E8 /* Social.framework */; };
 		DE4AA4B7152A5429007F80C4 /* OhmSongTableViewTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4AA4B6152A5429007F80C4 /* OhmSongTableViewTableController.m */; };
 		DE5750A315140DA500FB0D67 /* fwd_btn_up.png in Resources */ = {isa = PBXBuildFile; fileRef = DE57509F15140DA500FB0D67 /* fwd_btn_up.png */; };
 		DE5750A415140DA500FB0D67 /* fwd_btn_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5750A115140DA500FB0D67 /* fwd_btn_up@2x.png */; };
@@ -324,6 +325,7 @@
 		DE405087152E618700505CED /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/nav_bar_banner_home@2x.png"; sourceTree = "<group>"; };
 		DE40508A152E621200505CED /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/artist_scroll_background@2x.png"; sourceTree = "<group>"; };
 		DE40508E152E677A00505CED /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/tweet.png; sourceTree = "<group>"; };
+		DE45C6C816D2D94000C321E8 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		DE4AA4B3152A4D19007F80C4 /* OhmSongTableViewImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OhmSongTableViewImplementation.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		DE4AA4B5152A5429007F80C4 /* OhmSongTableViewTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OhmSongTableViewTableController.h; sourceTree = "<group>"; };
 		DE4AA4B6152A5429007F80C4 /* OhmSongTableViewTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OhmSongTableViewTableController.m; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE45C6C916D2D94200C321E8 /* Social.framework in Frameworks */,
 				DE95CC4214F6BD6300F10719 /* CoreGraphics.framework in Frameworks */,
 				301C86EB14BFDDFA0053E1F0 /* QuartzCore.framework in Frameworks */,
 				95F69E8614842812000DDB4D /* Twitter.framework in Frameworks */,
@@ -421,6 +424,7 @@
 		9588908013F9CCA100AC4269 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE45C6C816D2D94000C321E8 /* Social.framework */,
 				C86F5C55152BD11F00349B80 /* MobileCoreServices.framework */,
 				301C86DB14BFDDC50053E1F0 /* QuartzCore.framework */,
 				9588908113F9CCA100AC4269 /* UIKit.framework */,

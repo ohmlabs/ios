@@ -702,27 +702,28 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
 {
     // Set up the built-in twitter composition view controller.
     
-    // ISSUE: TWTweetComposeViewController has been  deprecated in iOS 6. Use SLComposeViewController (in the Social framework) instead.
-    TWTweetComposeViewController *tweetViewController = [[TWTweetComposeViewController alloc] init];
+    SLComposeViewController* tweetViewController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     
     // Set the initial tweet text. See the framework for additional properties that can be set.
     [tweetViewController setInitialText:[self nowPlayingTweetContent]];
     
     // Create the completion handler block.
-    [tweetViewController setCompletionHandler:^(TWTweetComposeViewControllerResult result) {
+    [tweetViewController setCompletionHandler:^(SLComposeViewControllerResult result) {
         
 		// We don't do anything with the result but the switch
 		// is here just in case...
 		
-        switch (result) {
-            case TWTweetComposeViewControllerResultCancelled:
+       switch (result) {
+            case SLComposeViewControllerResultCancelled:
                 break;
-            case TWTweetComposeViewControllerResultDone:
+            case SLComposeViewControllerResultDone:
                 break;
         }
                 
-        // Dismiss the tweet composition view controller. // Based on Apple Sample code, but still - is this safe to call from a background thread?
-        [self dismissViewControllerAnimated:YES completion:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self dismissViewControllerAnimated:YES completion:nil];
+        });
+        
     }];
     
     // Present the tweet composition view controller modally.
