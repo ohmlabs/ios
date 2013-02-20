@@ -67,9 +67,9 @@ static const char ASCII_DECIMAL_A = 65;
 	// i.e. when the index view becomes responsible for *drawing* the character index, as opposed
 	// to using a static graphic image.
 	
-	[indexChars insertObject:[NSString stringWithString:@"#"] atIndex:0];
-	[indexChars addObject:[NSString stringWithString:@"?"]];
-	
+	[indexChars insertObject:@"#" atIndex:0];
+	[indexChars addObject:@"?"];
+    
 	return indexChars;
 }
 

@@ -186,7 +186,7 @@ static NSString* const SIMULATOR_ALBUM_IMAGE_NAME	= @"Album_artwork_filler";
 	
 	for (NSUInteger i = 0; i < Count; i++)
 	{
-		[songTitles addObject:[NSString stringWithFormat:@"%@ song %lu", prefix, i + 1]];
+		[songTitles addObject:[NSString stringWithFormat:@"%@ song %d", prefix, i + 1]];
 	}
 	
 	return songTitles;
