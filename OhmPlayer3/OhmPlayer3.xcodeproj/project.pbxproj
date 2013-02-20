@@ -1570,14 +1570,10 @@
 			buildSettings = {
 				BUNDLE_ID = com.ohmlabs;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jessica Vazquez (7EEAFDYW7R)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
-				PROVISIONING_PROFILE = "7B7C5B52-F873-4EBB-A5C6-63766C584FC3";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7B7C5B52-F873-4EBB-A5C6-63766C584FC3";
 			};
 			name = Debug;
 		};
@@ -1638,14 +1634,10 @@
 			buildSettings = {
 				BUNDLE_ID = com.ohmlabs;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jessica Vazquez (ZFP422EEBC)";
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2C916A01-5FF7-4D2B-86FC-49C0553C816B";
 			};
 			name = "Debug - Ad Hoc";
 		};
