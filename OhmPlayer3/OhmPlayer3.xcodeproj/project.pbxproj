@@ -120,6 +120,7 @@
 		C8F6557515599B270074BC36 /* gallery-nav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8F6557315599B270074BC36 /* gallery-nav@2x.png */; };
 		C8F6557815599E2B0074BC36 /* gallery-top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8F6557615599E2B0074BC36 /* gallery-top@2x.png */; };
 		C8F6557B15599FDC0074BC36 /* gallery-nav.png in Resources */ = {isa = PBXBuildFile; fileRef = C8F6557915599FDC0074BC36 /* gallery-nav.png */; };
+		DE107D1E16D8261C006CDDC9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE107D1D16D8261C006CDDC9 /* Default-568h@2x.png */; };
 		DE405088152E618700505CED /* nav_bar_banner_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE405086152E618700505CED /* nav_bar_banner_home@2x.png */; };
 		DE40508B152E621200505CED /* artist_scroll_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE405089152E621200505CED /* artist_scroll_background@2x.png */; };
 		DE40508F152E677A00505CED /* tweet.png in Resources */ = {isa = PBXBuildFile; fileRef = DE40508D152E677A00505CED /* tweet.png */; };
@@ -304,6 +305,7 @@
 		C8F6557415599B270074BC36 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/gallery-nav@2x.png"; sourceTree = "<group>"; };
 		C8F6557715599E2B0074BC36 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/gallery-top@2x.png"; sourceTree = "<group>"; };
 		C8F6557A15599FDC0074BC36 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/gallery-nav.png"; sourceTree = "<group>"; };
+		DE107D1D16D8261C006CDDC9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DE2BE4F714E5C40F00102311 /* RELEASE NOTES */ = {isa = PBXFileReference; lastKnownFileType = text; name = "RELEASE NOTES"; path = "../OhmPlayer4/RELEASE NOTES"; sourceTree = "<group>"; };
 		DE405087152E618700505CED /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/nav_bar_banner_home@2x.png"; sourceTree = "<group>"; };
 		DE40508A152E621200505CED /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/artist_scroll_background@2x.png"; sourceTree = "<group>"; };
@@ -581,6 +583,7 @@
 		95E13CE9146B632000DCC835 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DE107D1D16D8261C006CDDC9 /* Default-568h@2x.png */,
 				C853BACC1541E3B2001B6784 /* Default@2x.png */,
 				C853BACD1541E3B2001B6784 /* Default.png */,
 				30B2C80614A2CD96008910B6 /* Icon@2x.png */,
@@ -847,6 +850,7 @@
 				C89C6631155B86F80067C56F /* lists-images.png in Resources */,
 				C8160F42155C9FAB00BF2B99 /* shuffle@2x.png in Resources */,
 				C8160F43155C9FAB00BF2B99 /* shuffle-btn-up@2x.png in Resources */,
+				DE107D1E16D8261C006CDDC9 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
