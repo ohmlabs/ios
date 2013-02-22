@@ -103,7 +103,7 @@
 //    NSLog(@"Setting the music player queue to %@", itemCollection);
 //    NSLog(@"Items in queue: %@", [itemCollection items]);
     
-	[[self musicPlayer]	setQueueWithItemCollection:itemCollection];
+	if (itemCollection) [[self musicPlayer]	setQueueWithItemCollection:itemCollection];
 
 }
 
@@ -152,7 +152,7 @@
 {	
 	NSArray* currentMediaItems = [self mediaItemsFromSongCollection:currentSongCollection];
 	
-	if (![previousCollectionMediaItems isEqualToArray:currentMediaItems])
+	if (previousCollectionMediaItems && ![previousCollectionMediaItems isEqualToArray:currentMediaItems])
 	{
 		// The current media items have changed since the queue/collection was last set. Update it.
 		

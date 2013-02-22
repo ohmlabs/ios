@@ -669,9 +669,13 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
 {	
 	[[self musicPlayer] playSongCollection:[self selectedAlbum]];
 	
+    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:SONG_TABLE_SECTION];
+        
+    if (![tableView cellForRowAtIndexPath:indexPath]) return; // the index path is not valid...
+    
 	// Reload the first cell in the tableview to allow it to visually indicate it's playing.
 	
-	NSArray* paths = [[NSArray alloc] initWithObjects:[NSIndexPath indexPathForRow:0 inSection:SONG_TABLE_SECTION], nil];
+	NSArray* paths = [[NSArray alloc] initWithObjects:indexPath, nil];
 	[tableView reloadRowsAtIndexPaths:paths withRowAnimation:NO];
 }
 

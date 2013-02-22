@@ -390,8 +390,6 @@
 {
     NSArray* items = [MPMediaQuery songsQuery].items;
     
-    NSParameterAssert([items count]);
-    
 	return ([items count]) ?[[MPMediaItemCollection alloc] initWithItems:items] : nil;
 }
 
