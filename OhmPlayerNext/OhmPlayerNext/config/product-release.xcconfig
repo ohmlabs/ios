@@ -1,8 +1,0 @@
-//
-//  product-release.xcconfig
-//
-//  Created by Reg on 1/25/11.
-
-
-#include "release.xcconfig"
-#include "product.xcconfig"
