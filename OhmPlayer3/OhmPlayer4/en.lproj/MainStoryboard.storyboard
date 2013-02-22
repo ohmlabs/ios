@@ -1,13 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="10K549" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Vfy-gH-6RG">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Vfy-gH-6RG">
     <dependencies>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
+        <!--Ohm-->
         <scene sceneID="QSg-Ba-vbG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GiD-yn-uIM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="MusicScreen" id="mcy-mO-vk9" userLabel="Ohm" customClass="NowPlayingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q7P-H4-BPG">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -240,6 +239,7 @@
                         <outlet property="timeRemaining" destination="UsP-jv-OT8" id="RVn-bc-iia"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GiD-yn-uIM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer numberOfTapsRequired="2" id="oXd-Ov-8DJ" userLabel="Double Tap - Toggle Play">
                     <connections>
                         <action selector="toggleMusicPlaying:" destination="mcy-mO-vk9" id="Esa-qV-4xc"/>
@@ -263,9 +263,9 @@
             </objects>
             <point key="canvasLocation" x="-2" y="-485"/>
         </scene>
+        <!--Playlists Tutorial View Controller-->
         <scene sceneID="sV7-Fq-AIF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sUV-rH-VQX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="PlaylistsTutorialViewControllerID" id="OzD-Qz-aUp" customClass="PlaylistsTutorialViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ofw-4P-7aL">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -326,6 +326,7 @@
                         <outlet property="backgroundView" destination="JdY-R8-AAr" id="34d-8e-MJ4"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sUV-rH-VQX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="VNO-ig-5Oo">
                     <connections>
                         <action selector="tapAction:" destination="OzD-Qz-aUp" id="X3M-9T-U4l"/>
@@ -334,9 +335,9 @@
             </objects>
             <point key="canvasLocation" x="-421" y="-1149"/>
         </scene>
+        <!--Now Playing Tutorial View Controller-->
         <scene sceneID="kan-mT-3aP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="be8-nw-ftA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="NowPlayingTutorialViewControllerID" id="CT9-Zq-wUg" customClass="NowPlayingTutorialViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tLJ-MG-vwu">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -380,6 +381,7 @@
                         </connections>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="be8-nw-ftA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="piL-lh-2UK">
                     <connections>
                         <action selector="tapAction:" destination="CT9-Zq-wUg" id="5Pa-V5-RGd"/>
@@ -388,9 +390,9 @@
             </objects>
             <point key="canvasLocation" x="-2" y="-1150"/>
         </scene>
+        <!--Queue-->
         <scene sceneID="swt-NK-mak">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vWg-IM-e0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="Kh7-1q-zge" userLabel="Queue" customClass="QueueViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="67" sectionHeaderHeight="22" sectionFooterHeight="22" id="igh-cD-Wif">
                         <rect key="frame" x="0.0" y="64" width="320" height="372"/>
@@ -437,12 +439,13 @@
                         <outlet property="editButton" destination="lQf-3Q-FLX" id="deV-rJ-2GX"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vWg-IM-e0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="433" y="-485"/>
         </scene>
+        <!--Queue Tutorial View Controller-->
         <scene sceneID="oFY-Q7-tFg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="44U-BJ-JVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="QueueTutorialViewControllerID" id="c71-lv-t2r" customClass="QueueTutorialViewController" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="NrO-3V-j4Z">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -487,7 +490,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="HOW TO ADD SONGS TO YOUR QUEUE:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" adjustsFontSizeToFit="NO" minimumFontSize="10" id="kK5-M1-oqm">
+                            <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="HOW TO ADD SONGS TO YOUR QUEUE:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" adjustsFontSizeToFit="NO" id="kK5-M1-oqm">
                                 <rect key="frame" x="29" y="18" width="170" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="14"/>
@@ -503,6 +506,7 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="44U-BJ-JVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="axO-JJ-YVn">
                     <connections>
                         <action selector="tapAction:" destination="c71-lv-t2r" id="Fxr-WN-53X"/>
@@ -511,9 +515,9 @@
             </objects>
             <point key="canvasLocation" x="821" y="-485"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="BLU-dE-r7K">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Sj-pu-IqK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="Vfy-gH-6RG" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="mRo-Kj-b1n">
                         <autoresizingMask key="autoresizingMask"/>
@@ -522,12 +526,13 @@
                         <segue destination="CqD-TJ-g51" kind="relationship" relationship="rootViewController" id="brv-j4-FmM"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Sj-pu-IqK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-816" y="-485"/>
         </scene>
+        <!--Gallery View Controller-->
         <scene sceneID="OBF-pH-Rku">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ax-Od-cMi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="k2V-H5-xt6" customClass="GalleryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JHg-v5-6KK">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -694,21 +699,13 @@
                         <outlet property="songsTableView" destination="8WW-Sf-Ppz" id="FEW-JD-za4"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ax-Od-cMi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-400" y="295"/>
         </scene>
+        <!--Gallery List View Controller - Gallery Lists-->
         <scene sceneID="WoQ-rA-v8f">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Qe-4m-zcw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="cHh-P9-3V5">
-                    <connections>
-                        <outlet property="delegate" destination="GUc-TS-mn0" id="t3X-jc-e0u"/>
-                        <outlet property="searchBar" destination="uNM-iX-vQD" id="5aS-QP-rZB"/>
-                        <outlet property="searchContentsController" destination="GUc-TS-mn0" id="blB-D6-nnT"/>
-                        <outlet property="searchResultsDataSource" destination="GUc-TS-mn0" id="kE6-iS-uOL"/>
-                        <outlet property="searchResultsDelegate" destination="GUc-TS-mn0" id="rb6-70-fOJ"/>
-                    </connections>
-                </searchDisplayController>
                 <viewController storyboardIdentifier="galleryLists" title="Gallery Lists" id="GUc-TS-mn0" customClass="GalleryListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bY6-K6-P4X">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -837,12 +834,22 @@
                         <outlet property="tableView" destination="Hyi-ua-Unx" id="gM7-Wp-yrj"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Qe-4m-zcw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="cHh-P9-3V5">
+                    <connections>
+                        <outlet property="delegate" destination="GUc-TS-mn0" id="t3X-jc-e0u"/>
+                        <outlet property="searchBar" destination="uNM-iX-vQD" id="5aS-QP-rZB"/>
+                        <outlet property="searchContentsController" destination="GUc-TS-mn0" id="blB-D6-nnT"/>
+                        <outlet property="searchResultsDataSource" destination="GUc-TS-mn0" id="kE6-iS-uOL"/>
+                        <outlet property="searchResultsDelegate" destination="GUc-TS-mn0" id="rb6-70-fOJ"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="29" y="305"/>
         </scene>
+        <!--Select Playlist Table View Controller - Select Playlist-->
         <scene sceneID="JM9-V1-0Zi">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pCX-iI-PD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="" id="v93-iW-B9n" customClass="SelectPlaylistTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="68" sectionHeaderHeight="22" sectionFooterHeight="22" id="KKx-Kx-26w">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -881,12 +888,13 @@
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pCX-iI-PD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1339" y="345"/>
         </scene>
+        <!--Playlists View Controller - PLAYLISTS-->
         <scene sceneID="77x-es-Tmu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aYR-ns-3oT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="CqD-TJ-g51" customClass="PlaylistsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gAl-Q4-XtE">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
@@ -992,7 +1000,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="H1q-Nu-JG7">
                                 <rect key="frame" x="265" y="279" width="35" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="action-btn-up@2x.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1022,12 +1030,13 @@
                         <outlet property="wire" destination="0yI-a4-pCp" id="aBW-dc-N66"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aYR-ns-3oT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-409" y="-485"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="bjd-Xa-xrv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="97m-IW-VqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="SelectPlaylistTableViewControllerID" id="mZf-2u-Ehw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="T9b-KS-ikF">
@@ -1040,6 +1049,7 @@
                         <segue destination="v93-iW-B9n" kind="relationship" relationship="rootViewController" id="45g-No-YNy"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="97m-IW-VqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="813" y="345"/>
         </scene>
@@ -1097,6 +1107,7 @@
                 <relationship kind="action" name="addAndShuffleAlbumSongs:"/>
                 <relationship kind="action" name="back:"/>
                 <relationship kind="action" name="search:"/>
+                <relationship kind="action" name="selectedCharacterInIndex:"/>
                 <relationship kind="outlet" name="albumGallery" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="albumTitleLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="artistGallery" candidateClass="UITableView"/>
@@ -1123,7 +1134,7 @@
                 <relationship kind="action" name="shuffleRoulette:"/>
                 <relationship kind="action" name="skipToNextItem"/>
                 <relationship kind="action" name="skipToPreviousItem"/>
-                <relationship kind="action" name="sliderDidChange:"/>
+                <relationship kind="action" name="sliderDidChange:" candidateClass="UISlider"/>
                 <relationship kind="action" name="toggleMusicPlaying:"/>
                 <relationship kind="action" name="togglePlayerControls:"/>
                 <relationship kind="outlet" name="addToQueueControl" candidateClass="UIView"/>
