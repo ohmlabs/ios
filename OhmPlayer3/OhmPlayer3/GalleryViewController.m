@@ -614,11 +614,9 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
     
     const NSInteger NumOfRows = [tv numberOfRowsInSection:section];
 
-    const BOOL isValidIndex = ((NumOfRows > 0) && (NumOfRows != NSNotFound));
+    const BOOL hasRows = ((NumOfRows > 0) && (NumOfRows != NSNotFound));
     
-    NSParameterAssert(isValidIndex);
-    
-    if (isValidIndex)
+    if (hasRows)
     {
         NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:section];
         
