@@ -609,7 +609,16 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
     // Note: if index path doesn't exist, the selectRowAtIndexPath:... method
     // will blow up. Unfortunately, it's expensive to ensure the path exists...
     
-    if ([tv numberOfRowsInSection:section])
+    // Apple doesn't document it, but asking for a section that doesn't exist returns
+    // NSNotFound (not 0) rows...
+    
+    const NSInteger NumOfRows = [tv numberOfRowsInSection:section];
+
+    const BOOL isValidIndex = ((NumOfRows > 0) && (NumOfRows != NSNotFound));
+    
+    NSParameterAssert(isValidIndex);
+    
+    if (isValidIndex)
     {
         NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:section];
         
@@ -660,9 +669,13 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
 {	
 	[[self musicPlayer] playSongCollection:[self selectedAlbum]];
 	
+    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:SONG_TABLE_SECTION];
+        
+    if (![tableView cellForRowAtIndexPath:indexPath]) return; // the index path is not valid...
+    
 	// Reload the first cell in the tableview to allow it to visually indicate it's playing.
 	
-	NSArray* paths = [[NSArray alloc] initWithObjects:[NSIndexPath indexPathForRow:0 inSection:SONG_TABLE_SECTION], nil];
+	NSArray* paths = [[NSArray alloc] initWithObjects:indexPath, nil];
 	[tableView reloadRowsAtIndexPaths:paths withRowAnimation:NO];
 }
 

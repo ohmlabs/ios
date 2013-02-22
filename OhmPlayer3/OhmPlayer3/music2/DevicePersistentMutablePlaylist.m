@@ -91,11 +91,11 @@
 
 - (void) addSongsForAlbum:(Album*)album
 {
+    if (!album) return; // can happen when the device has no songs...
+    
 	MPMediaItemCollection* collection = ((DeviceAlbum*)album).mediaItemCollection;
-	
-	NSParameterAssert(collection);
-	
-	if ([self addSongMediaItemCollection:collection])
+
+	if (collection && [self addSongMediaItemCollection:collection])
 	{
 		// On success, indirectly update the inherited Songs property so that this
 		// playlist's songs can be displayed in a tableview.

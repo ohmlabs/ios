@@ -208,7 +208,6 @@
 		959C5EF81460B92400764EA2 /* ohmPlayer4.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ohmPlayer4.xcconfig; sourceTree = "<group>"; };
 		959C5EF91460BA0500764EA2 /* ohmPlayer4-debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ohmPlayer4-debug.xcconfig"; sourceTree = "<group>"; };
 		959C5EFA1460BA0500764EA2 /* ohmPlayer4-release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ohmPlayer4-release.xcconfig"; sourceTree = "<group>"; };
-		95A81603143788C4005DAE1A /* REVISIONS */ = {isa = PBXFileReference; lastKnownFileType = text; path = REVISIONS; sourceTree = "<group>"; };
 		95A816131437CB2D005DAE1A /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
 		95A816141437CB2D005DAE1A /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
 		95A816151437CB2D005DAE1A /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
@@ -568,7 +567,6 @@
 				951F3F511538BF8A0079F303 /* AppStore Text.txt */,
 				DEF9C72014CDF1720037918A /* DeviceIDs README */,
 				DE823D4714CDE40D002FAFA9 /* DeviceIDs.txt */,
-				95A81603143788C4005DAE1A /* REVISIONS */,
 			);
 			name = Docs;
 			path = OhmPlayer3;
@@ -1572,14 +1570,10 @@
 			buildSettings = {
 				BUNDLE_ID = com.ohmlabs;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jessica Vazquez (7EEAFDYW7R)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
-				PROVISIONING_PROFILE = "7B7C5B52-F873-4EBB-A5C6-63766C584FC3";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7B7C5B52-F873-4EBB-A5C6-63766C584FC3";
 			};
 			name = Debug;
 		};
@@ -1640,14 +1634,10 @@
 			buildSettings = {
 				BUNDLE_ID = com.ohmlabs;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jessica Vazquez (ZFP422EEBC)";
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2C916A01-5FF7-4D2B-86FC-49C0553C816B";
 			};
 			name = "Debug - Ad Hoc";
 		};

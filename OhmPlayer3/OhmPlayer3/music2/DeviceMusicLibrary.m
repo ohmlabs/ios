@@ -334,9 +334,10 @@
     }
     
     // We didn't return above, so we didn't find a match.
-    // Return the last known non-empty index
+    // Return the last known index.
     
-    return (SectionIndexCount) ? (SectionIndexCount - 1) : NSNotFound;
+    const NSUInteger AvailableSectionsCount = [[self allArtistSections] count];
+    return (AvailableSectionsCount) ? (AvailableSectionsCount - 1) : NSNotFound;
 
     // On the device, the iPod music library only provides information correspondong
     // to non-empty table view sections.
@@ -387,7 +388,9 @@
 
 - (id) songCollection
 {
-	return [[MPMediaItemCollection alloc] initWithItems:[MPMediaQuery songsQuery].items];
+    NSArray* items = [MPMediaQuery songsQuery].items;
+    
+	return ([items count]) ?[[MPMediaItemCollection alloc] initWithItems:items] : nil;
 }
 
 - (id) imageWithSize:(CGSize)aSize
