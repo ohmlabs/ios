@@ -81,7 +81,6 @@
 		95F5836A1461C9D100613450 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F583681461C9D100613450 /* MainStoryboard.storyboard */; };
 		95F69E8114842272000DDB4D /* placeholderAirplayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F69E7C14842272000DDB4D /* placeholderAirplayButton.png */; };
 		95F69E8314842272000DDB4D /* placeholderAirplayButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95F69E7E14842272000DDB4D /* placeholderAirplayButton@2x.png */; };
-		95F69E8614842812000DDB4D /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F69E8514842812000DDB4D /* Twitter.framework */; };
 		95FE6DF0153B56A1006EF985 /* SelectPlaylistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FE6DEE153B56A1006EF985 /* SelectPlaylistTableViewController.m */; };
 		C800FEA5155B39B800700376 /* NowPlayingTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C800FEA3155B39B800700376 /* NowPlayingTutorialViewController.m */; };
 		C800FEA9155B3A9200700376 /* nowplaying-tutorial-images.png in Resources */ = {isa = PBXBuildFile; fileRef = C800FEA7155B3A9200700376 /* nowplaying-tutorial-images.png */; };
@@ -265,7 +264,6 @@
 		95F583691461C9D100613450 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		95F69E7D14842272000DDB4D /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/placeholderAirplayButton.png; sourceTree = "<group>"; };
 		95F69E7F14842272000DDB4D /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/placeholderAirplayButton@2x.png"; sourceTree = "<group>"; };
-		95F69E8514842812000DDB4D /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		95FE6DED153B56A1006EF985 /* SelectPlaylistTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPlaylistTableViewController.h; sourceTree = "<group>"; };
 		95FE6DEE153B56A1006EF985 /* SelectPlaylistTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPlaylistTableViewController.m; sourceTree = "<group>"; };
 		95FF2E8E13FB1D7B007085D5 /* GalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GalleryViewController.h; path = OhmPlayer3/GalleryViewController.h; sourceTree = "<group>"; };
@@ -348,7 +346,6 @@
 				DE45C6C916D2D94200C321E8 /* Social.framework in Frameworks */,
 				DE95CC4214F6BD6300F10719 /* CoreGraphics.framework in Frameworks */,
 				301C86EB14BFDDFA0053E1F0 /* QuartzCore.framework in Frameworks */,
-				95F69E8614842812000DDB4D /* Twitter.framework in Frameworks */,
 				959C5EE514609AC200764EA2 /* UIKit.framework in Frameworks */,
 				959C5EE614609AC200764EA2 /* Foundation.framework in Frameworks */,
 				95F392D314620871003BEA23 /* MediaPlayer.framework in Frameworks */,
@@ -430,7 +427,6 @@
 				9588908313F9CCA100AC4269 /* Foundation.framework */,
 				95210FB51416C3ED003CEDFD /* MediaPlayer.framework */,
 				DE95CC4114F6BD6300F10719 /* CoreGraphics.framework */,
-				95F69E8514842812000DDB4D /* Twitter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
