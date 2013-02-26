@@ -2,14 +2,7 @@
 //  base.xcconfig
 //
 
-
-//BUNDLE_ID = com.ohmlabs.player
-
 //CODE_SIGN_IDENTITY = iPhone Distribution: Ohm Labs, Inc./
-
-BUNDLE_ID = stormbring
-
-CODE_SIGN_IDENTITY = iPhone Developer: Reggie Adkins (J229VVCZA2)
 
 ADDITIONAL_SDKS = 
 ARCHS = $(ARCHS_STANDARD_32_BIT)
@@ -23,8 +16,6 @@ IPHONEOS_DEPLOYMENT_TARGET = 6.0
 ALWAYS_SEARCH_USER_PATHS = NO
 RUN_CLANG_STATIC_ANALYZER = YES
 VALIDATE_PRODUCT = YES
-GCC_VERSION = com.apple.compilers.llvm.clang.1_0
-GCC_C_LANGUAGE_STANDARD = c99
 GCC_PRECOMPILE_PREFIX_HEADER = YES
 
 #include "warn.xcconfig"
