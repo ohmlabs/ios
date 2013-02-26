@@ -349,7 +349,7 @@
 	
 	for (NSUInteger i = ([array count] - 1); i > 0 ; i--)
 	{
-		const NSUInteger j = ((NSUInteger)random() % i);
+		const NSUInteger j = ((NSUInteger)arc4random() % i);
 		
 		[array exchangeObjectAtIndex:j withObjectAtIndex:i];
 	}
