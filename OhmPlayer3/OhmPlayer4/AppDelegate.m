@@ -13,16 +13,8 @@
 
 @synthesize window = _window;
 
-void uncaughtExceptionHandler(NSException *exception)
-{
-    NSLog(@"CRASH: %@", exception);
-    NSLog(@"Stack Trace: %@", [exception callStackSymbols]);
-    // Internal error reporting
-}
-
 - (void)applicationDidFinishLaunching:(UIApplication *)application
 {
-    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     
 	[[UIApplication sharedApplication] setStatusBarStyle:[OhmAppearance defaultStatusBarStyle] animated:NO];
 	
