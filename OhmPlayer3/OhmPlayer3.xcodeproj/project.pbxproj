@@ -19,7 +19,7 @@
 		30B743CC14930EEF00930E2F /* lists_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 30B743C314930EEF00930E2F /* lists_background.png */; };
 		30BF76DE1496DAF30093D05D /* nav_bar_banner_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 30BF76D71496DAF30093D05D /* nav_bar_banner_home.png */; };
 		30BF76E01496DAF30093D05D /* nav_bar_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 30BF76D91496DAF30093D05D /* nav_bar_banner.png */; };
-		950A78211472D5EC00A21E3A /* AppleSampleCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 950A781F1472D5EC00A21E3A /* AppleSampleCode.m */; };
+		950A78211472D5EC00A21E3A /* AppleSampleCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 950A781F1472D5EC00A21E3A /* AppleSampleCode.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		95136F5B147855E5008257DE /* music_btn_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95136F57147855E5008257DE /* music_btn_up@2x.png */; };
 		95136F5C147855E5008257DE /* music_btn_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 95136F59147855E5008257DE /* music_btn_up.png */; };
 		951D112C1536144000624AFF /* SearchResultsTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C825EF9C152F50C700E08146 /* SearchResultsTableViewDataSource.m */; };
@@ -197,9 +197,9 @@
 		959C5EF81460B92400764EA2 /* ohmPlayer4.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ohmPlayer4.xcconfig; sourceTree = "<group>"; };
 		959C5EF91460BA0500764EA2 /* ohmPlayer4-debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ohmPlayer4-debug.xcconfig"; sourceTree = "<group>"; };
 		959C5EFA1460BA0500764EA2 /* ohmPlayer4-release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ohmPlayer4-release.xcconfig"; sourceTree = "<group>"; };
-		95A816131437CB2D005DAE1A /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
+		95A816131437CB2D005DAE1A /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Album.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		95A816141437CB2D005DAE1A /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
-		95A816151437CB2D005DAE1A /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
+		95A816151437CB2D005DAE1A /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Artist.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		95A816161437CB2D005DAE1A /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
 		95A816171437CB2D005DAE1A /* DeviceAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceAlbum.h; sourceTree = "<group>"; };
 		95A816181437CB2D005DAE1A /* DeviceAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceAlbum.m; sourceTree = "<group>"; };

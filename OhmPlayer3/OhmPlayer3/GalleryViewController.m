@@ -182,16 +182,16 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
 	return [[self albumNames] objectAtIndex:i];
 }
 
-- (NSInteger) indexOfSelectedRowForTableView:(UITableView*)tv
+- (NSUInteger) indexOfSelectedRowForTableView:(UITableView*)tv
 {
     NSIndexPath* indexPath = [tv indexPathForSelectedRow];
     
-    return (indexPath) ? [indexPath row] : NSNotFound;
+    return (indexPath) ? (NSUInteger)[indexPath row] : NSNotFound;
 }
 
-- (NSInteger) indexOfSelectedAlbum
+- (NSUInteger) indexOfSelectedAlbum
 {
-    NSInteger i = [self indexOfSelectedRowForTableView:albumGallery];
+    NSUInteger i = [self indexOfSelectedRowForTableView:albumGallery];
     
     if (NSNotFound == i)
     {
@@ -481,7 +481,7 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
 	{
 		const NSInteger row = [indexPath row];
 		
-		MusicLibrarySong* song = [songs objectAtIndex:row];
+		MusicLibrarySong* song = (row >=0) ? [songs objectAtIndex:(NSUInteger)row] : nil;
 		if (song)
 		{
 			[self configureSongTableViewCell:cell forSong:song];
@@ -509,8 +509,6 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
 		cell.textLabel.text = [self defaultArtistName];
 	}
 	
-	static const CGFloat	ARTIST_CELL_FONTSIZE_MIN	= 16.0F;
-		
     static UIFont* font = nil;
     static UIColor* textColor = nil;
     static UIColor* cellHighlightColor = nil;
@@ -563,7 +561,7 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
     
     if (row >= 0)
     {
-        UIImage* image = [self albumImageAtIndex:row withSize:cell.frame.size];
+        UIImage* image = [self albumImageAtIndex:(NSUInteger)row withSize:cell.frame.size];
         
         UIImageView* imageView = (UIImageView*)[cell viewWithTag:VIEW_TAG_UIIMAGE_SUBVIEW];
         
@@ -612,13 +610,13 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
     // Apple doesn't document it, but asking for a section that doesn't exist returns
     // NSNotFound (not 0) rows...
     
-    const NSInteger NumOfRows = [tv numberOfRowsInSection:section];
+    const NSInteger NumOfRows = [tv numberOfRowsInSection:(NSInteger)section];
 
     const BOOL hasRows = ((NumOfRows > 0) && (NumOfRows != NSNotFound));
     
     if (hasRows)
     {
-        NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:section];
+        NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:(NSInteger)section];
         
         if (indexPath) [tv selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionMiddle];
     }
@@ -645,7 +643,7 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
 
 - (void) playSongInTableView:(UITableView*)tableView atIndexPath:(NSIndexPath*)indexPath
 {	
-	MusicLibrarySong* song = [[self songsForArtistAndAlbum] objectAtIndex:[indexPath row]];
+	MusicLibrarySong* song = ([indexPath row] >=0) ? [[self songsForArtistAndAlbum] objectAtIndex:(NSUInteger)[indexPath row]] : nil;
 	
 	if (song)
 	{
@@ -660,7 +658,7 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
 
 - (MusicLibrarySong*) songForIndexPath:(NSIndexPath*)indexPath
 {
-	return [[self songsForArtistAndAlbum] objectAtIndex:[indexPath row]];
+	return ([indexPath row] >= 0) ? [[self songsForArtistAndAlbum] objectAtIndex:(NSUInteger)[indexPath row]] : nil;
 }
 
 - (void) playSongsInTableView:(UITableView*)tableView
@@ -711,17 +709,17 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
     
     UITableView* tableView = artistGallery;
     
-    const NSUInteger indexSection = [[self currentCollation] sectionForObject:sectionName collationStringSelector:@selector(self)];
+    const NSUInteger indexSection = (NSUInteger)[[self currentCollation] sectionForObject:sectionName collationStringSelector:@selector(self)];
     
     const NSUInteger tableViewSection = [[self musicLibrary] nearestTableViewSectionForArtistCharacterIndexSection:indexSection];
     
     if (NSNotFound != tableViewSection)
     {
-        const NSUInteger rows = [tableView numberOfRowsInSection:tableViewSection];
+        const NSUInteger rows = (NSUInteger)[tableView numberOfRowsInSection:(NSInteger)tableViewSection];
         
         for (NSUInteger row = 0; row < rows; row++)
         {
-            NSIndexPath* indexPath = [NSIndexPath indexPathForRow:row inSection:tableViewSection];
+            NSIndexPath* indexPath = [NSIndexPath indexPathForRow:(NSInteger)row inSection:(NSInteger)tableViewSection];
             
             if (indexPath)
             {
@@ -826,7 +824,7 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
     
     if (NSNotFound != i)
     {
-        NSIndexPath* indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+        NSIndexPath* indexPath = [NSIndexPath indexPathForRow:(NSInteger)i inSection:0];
         
         if (indexPath)
         {
@@ -1179,7 +1177,7 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
 {
     if (tableView == artistGallery)
     {
-        return [[self musicLibrary] numberOfSectionsForArtists];
+        return (NSInteger)[[self musicLibrary] numberOfSectionsForArtists];
     }
     else
     {
@@ -1198,11 +1196,11 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
     }
     else if (tableView == artistGallery)
     {
-        rows = [[self musicLibrary] numberOfRowsForArtistSection:section]; 
+        rows = (NSInteger)[[self musicLibrary] numberOfRowsForArtistSection:(NSUInteger)section];
     }
     else if (tableView == albumGallery)
     {
-        rows = [[self albumNames] count];
+        rows = (NSInteger)[[self albumNames] count];
     }
        
     return rows;
@@ -1356,8 +1354,8 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
     
     if ([letter length])
     {        
-        const NSUInteger characterIndexSection = [[self currentCollation] sectionForObject:letter collationStringSelector:@selector(self)];
-         
+        const NSUInteger characterIndexSection = (NSUInteger)[[self currentCollation] sectionForObject:letter collationStringSelector:@selector(self)];
+        
         const NSUInteger tableViewSection = [[self musicLibrary] nearestTableViewSectionForArtistCharacterIndexSection:characterIndexSection];
         
         if (tableViewSection != NSNotFound)

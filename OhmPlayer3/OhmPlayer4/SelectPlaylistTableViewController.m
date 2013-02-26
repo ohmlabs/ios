@@ -93,7 +93,7 @@ static NSString* const SELECT_PLAYLIST_VC_STORYBOARD		= @"MainStoryboard";
 {
 	// Note: this correctly does not display iTunes playlists, which are immutable.
 	
-	return [[[OhmPlaylistManager sharedInstance] persistentMutablePlaylists] count];
+	return (NSInteger)[[[OhmPlaylistManager sharedInstance] persistentMutablePlaylists] count];
 }
 
 - (UIColor*) colorForIdentifier:(NSString*)identifier
@@ -116,7 +116,7 @@ static NSString* const SELECT_PLAYLIST_VC_STORYBOARD		= @"MainStoryboard";
     
     // Configure the cell...
     
-	Playlist* playlist = [[[OhmPlaylistManager sharedInstance] persistentMutablePlaylists] objectAtIndex:[indexPath row]];
+	Playlist* playlist = [[[OhmPlaylistManager sharedInstance] persistentMutablePlaylists] objectAtIndex:(NSUInteger)[indexPath row]];
 	
 	NSData* imageData = playlist.imageData;
 	
@@ -147,7 +147,7 @@ static NSString* const SELECT_PLAYLIST_VC_STORYBOARD		= @"MainStoryboard";
 	
 	if ([delegate conformsToProtocol:@protocol(SelectPlaylistDelegate)])
 	{
-		Playlist* playlist = [[[OhmPlaylistManager sharedInstance] persistentMutablePlaylists] objectAtIndex:[indexPath row]];
+		Playlist* playlist = [[[OhmPlaylistManager sharedInstance] persistentMutablePlaylists] objectAtIndex:(NSUInteger)[indexPath row]];
 
 		[(id<SelectPlaylistDelegate>)delegate didSelectPlaylist:playlist];
 	}

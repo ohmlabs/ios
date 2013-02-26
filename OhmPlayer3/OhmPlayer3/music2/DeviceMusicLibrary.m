@@ -253,9 +253,9 @@
 	
 	if ((row >= 0) && (section >= 0))
 	{
-		MPMediaQuerySection* querySection = [self artistMediaSectionForSection:section];
+		MPMediaQuerySection* querySection = [self artistMediaSectionForSection:(NSUInteger)section];
 				
-        return (!querySection) ? nil : [[self allArtists] objectAtIndex:(querySection.range.location + row)];
+        return (!querySection) ? nil : [[self allArtists] objectAtIndex:(querySection.range.location + (NSUInteger)row)];
 	}
 	
 	return nil;
@@ -268,9 +268,9 @@
 	
 	if ((row >= 0) && (section >= 0))
 	{
-		MPMediaQuerySection* querySection = [self songMediaSectionForSection:section];
+		MPMediaQuerySection* querySection = [self songMediaSectionForSection:(NSUInteger)section];
 		
-        return (!querySection) ? nil : [[self allSongs] objectAtIndex:(querySection.range.location + row)];
+        return (!querySection) ? nil : [[self allSongs] objectAtIndex:(querySection.range.location + (NSUInteger)row)];
 	}
 	
 	return nil;
@@ -355,9 +355,9 @@
 	
 	if ((row >= 0) && (section >= 0))
 	{
-		MPMediaQuerySection* querySection = [self albumMediaSectionForSection:section];
+		MPMediaQuerySection* querySection = [self albumMediaSectionForSection:(NSUInteger)section];
 				
-		return [[self allAlbums] objectAtIndex:(querySection.range.location + row)];
+		return [[self allAlbums] objectAtIndex:(querySection.range.location + (NSUInteger)row)];
 	}
 	
 	return nil;

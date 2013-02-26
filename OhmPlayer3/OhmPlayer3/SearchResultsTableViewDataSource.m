@@ -34,7 +34,7 @@ static NSString* const PLACEHOLDER_ALBUM_IMAGE_NAME = @"default_album_artwork";
 
 - (NSString*) reuseIDForSection:(NSInteger)section
 {
-    NSString*   sectionKey = [[[self searchResults] allKeys] objectAtIndex:section];
+    NSString*   sectionKey = [[[self searchResults] allKeys] objectAtIndex:(NSUInteger)section];
     
     if ([sectionKey isEqualToString:SEARCH_RESULTS_KEY_ARTISTS])
     {
@@ -161,18 +161,18 @@ static NSString* const PLACEHOLDER_ALBUM_IMAGE_NAME = @"default_album_artwork";
     const NSInteger section = [indexPath section];
 	const NSInteger row = [indexPath row];
     
-    NSString*   sectionKey = [[[self searchResults] allKeys] objectAtIndex:section];
+    NSString*   sectionKey = [[[self searchResults] allKeys] objectAtIndex:(NSUInteger)section];
     NSArray*    sectionContents = [[self searchResults] valueForKey:sectionKey];
 	
 	if ([sectionKey isEqualToString:SEARCH_RESULTS_KEY_ARTISTS])
 	{
-        Artist* artist = [sectionContents objectAtIndex:row];
+        Artist* artist = [sectionContents objectAtIndex:(NSUInteger)row];
         
         cell.textLabel.text = artist.name;
     }
     else if ([sectionKey isEqualToString:SEARCH_RESULTS_KEY_ALBUMS])
     {
-		Album* album = [sectionContents objectAtIndex:row];
+		Album* album = [sectionContents objectAtIndex:(NSUInteger)row];
 		
 		UIImage* image = [self imageWithSize:CGSizeMake(cell.frame.size.height, cell.frame.size.height) forAlbum:album];
 		
@@ -188,7 +188,7 @@ static NSString* const PLACEHOLDER_ALBUM_IMAGE_NAME = @"default_album_artwork";
     }
     else if ([sectionKey isEqualToString:SEARCH_RESULTS_KEY_SONGS])
     {
-		Song* song = [sectionContents objectAtIndex:row];
+		Song* song = [sectionContents objectAtIndex:(NSUInteger)row];
 		
 		cell.textLabel.text = song.title;
 		
@@ -221,45 +221,45 @@ static NSString* const PLACEHOLDER_ALBUM_IMAGE_NAME = @"default_album_artwork";
 {
     NSArray* artistResults = [searchResults valueForKey:SEARCH_RESULTS_KEY_ARTISTS];
     
-	return ([artistResults count] && indexPath) ? [artistResults objectAtIndex:indexPath.row] : nil;
+	return ([artistResults count] && indexPath) ? [artistResults objectAtIndex:(NSUInteger)indexPath.row] : nil;
 }
 
 - (Album*) albumResultForIndexPath:(NSIndexPath*)indexPath
 {
     NSArray* albumResults = [searchResults valueForKey:SEARCH_RESULTS_KEY_ALBUMS];
     
-	return ([albumResults count] && indexPath) ? [albumResults objectAtIndex:indexPath.row] : nil;
+	return ([albumResults count] && indexPath) ? [albumResults objectAtIndex:(NSUInteger)indexPath.row] : nil;
 }
 
 - (MusicLibrarySong*) songResultForIndexPath:(NSIndexPath*)indexPath
 {
     NSArray* songResults = [searchResults valueForKey:SEARCH_RESULTS_KEY_SONGS];
     
-	return ([songResults count] && indexPath) ? [songResults objectAtIndex:indexPath.row] : nil;
+	return ([songResults count] && indexPath) ? [songResults objectAtIndex:(NSUInteger)indexPath.row] : nil;
 }
 
 - (NSString*) sectionNameForIndexPath:(NSIndexPath*)indexPath
 {
-    return [[searchResults allKeys] objectAtIndex:indexPath.section];
+    return [[searchResults allKeys] objectAtIndex:(NSUInteger)indexPath.section];
 }
 
 #pragma mark UITableViewDataSource Methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
- 	return [[self searchResults] count];
+ 	return (NSInteger)[[self searchResults] count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [[[self searchResults] allKeys] objectAtIndex:section];
+    return [[[self searchResults] allKeys] objectAtIndex:(NSUInteger)section];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSArray*    sectionList = [[self searchResults] valueForKey:[[[self searchResults] allKeys] objectAtIndex:section]];
+    NSArray*    sectionList = [[self searchResults] valueForKey:[[[self searchResults] allKeys] objectAtIndex:(NSUInteger)section]];
     
-	return [sectionList count];
+	return (NSInteger)[sectionList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

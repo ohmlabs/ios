@@ -22,7 +22,7 @@
 	NSMutableDictionary* state;
 }
 
-@property (nonatomic, strong, readonly) NSString	*filename;
+@property (nonatomic, readonly) NSString	*filename;
 
 @property (nonatomic, assign, readonly) BOOL isQueue;
 

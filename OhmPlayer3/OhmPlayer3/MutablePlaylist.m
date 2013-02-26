@@ -108,9 +108,9 @@
 {
     if (destinationIndex != sourceIndex)
     {        
-        id obj = [mutableArray objectAtIndex:sourceIndex];
+        id obj = [mutableArray objectAtIndex:(NSUInteger)sourceIndex];
         
-        [mutableArray removeObjectAtIndex:sourceIndex];
+        [mutableArray removeObjectAtIndex:(NSUInteger)sourceIndex];
         
         if (destinationIndex >= (NSInteger)[mutableArray count])
         {
@@ -118,7 +118,7 @@
         }
         else
         {
-            [mutableArray insertObject:obj atIndex:destinationIndex];
+            [mutableArray insertObject:obj atIndex:(NSUInteger)destinationIndex];
         }
     }
 }

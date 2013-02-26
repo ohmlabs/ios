@@ -491,18 +491,9 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
     return song.artistName;
 }
 
-- (NSString*) titterNowPlayingFormat_title_artist
-{
-    // Note: the now playing format needs to be localized.
-     
-    return NSLocalizedString(@"#np %@ by %@ #ohm", @"#np %@ by %@ #ohm");
-}
-
 - (NSString*) twitterPostForSong:(Song*)song
-{
-    NSString* format_title_artist = [self titterNowPlayingFormat_title_artist];
-    
-	NSString* result = (song && format_title_artist) ? [NSString stringWithFormat:format_title_artist,
+{    
+	NSString* result = (song) ? [NSString stringWithFormat:NSLocalizedString(@"#np %@ by %@ #ohm", @"#np %@ by %@ #ohm"),
                                                         song.title,
                                                         [self twitterArtistFromSong:song]] : nil;
 	

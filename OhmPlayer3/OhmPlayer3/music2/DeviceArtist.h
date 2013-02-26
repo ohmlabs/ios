@@ -14,7 +14,7 @@
 
 @interface DeviceArtist : Artist
 
-@property (nonatomic, strong, readonly) MPMediaItemCollection* mediaItemCollection;
+@property (nonatomic, readonly) MPMediaItemCollection* mediaItemCollection;
 
 - (id) initWithMediaItemCollection:(id)mediaItemCollection;
 

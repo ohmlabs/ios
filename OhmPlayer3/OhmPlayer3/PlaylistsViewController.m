@@ -289,7 +289,6 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
     
     NSString*	CELL_FONTNAME                   = [OhmAppearance defaultFontName];
 	static const CGFloat	CELL_FONTSIZE		= 14.0F;
-	static const CGFloat	CELL_FONTSIZE_MIN	= 10.0F;
 	static		UIFont*		font = nil;
     
 	if (!font)
@@ -385,7 +384,7 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
 {
 	const NSInteger row = [indexPath row];
 	
-	return (row >= 0) ? [[self songs] objectAtIndex:row] : nil;
+	return (row >= 0) ? [[self songs] objectAtIndex:(NSUInteger)row] : nil;
 }
 
 - (void) playSongInTableView:(UITableView*)aTableView atIndexPath:(NSIndexPath*)indexPath
@@ -434,7 +433,7 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
 	
 	[[self wire] reloadData];
 
-	[[self wire] selectRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0] 
+	[[self wire] selectRowAtIndexPath:[NSIndexPath indexPathForRow:(NSInteger)i inSection:0]
 							 animated:NO 
 					   scrollPosition:UITableViewScrollPositionNone];
 
@@ -703,11 +702,11 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
 {
     if (aTableView == wire)
     {
-        return [[self playlists] count];  //  Note: this is the total number of apple and ohm playlists combined.
+        return (NSInteger)[[self playlists] count];  //  Note: this is the total number of apple and ohm playlists combined.
     }
     else if (aTableView == tableView)
     {
-        return [[self selectedPlaylist] count];
+        return (NSInteger)[[self selectedPlaylist] count];
     }
     else
     {
@@ -734,7 +733,7 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
  
         const NSInteger row = [indexPath row];
         
-        Playlist* playlist = (row >=0) ? [[self playlists] objectAtIndex:row] : nil;
+        Playlist* playlist = (row >=0) ? [[self playlists] objectAtIndex:(NSUInteger)row] : nil;
 
         [self configurePlaylistCell:cell forPlaylist:playlist];
         
@@ -754,7 +753,7 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
         
         const NSInteger row = [indexPath row];
         
-        MusicLibrarySong* song = (row >=0) ? [songs objectAtIndex:row] : nil;
+        MusicLibrarySong* song = (row >=0) ? [songs objectAtIndex:(NSUInteger)row] : nil;
         
         if (song)
         {
@@ -786,7 +785,7 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
             
             if (playlist)
             {
-                [playlist removeSongAtIndex:[indexPath row]];
+                [playlist removeSongAtIndex:(NSUInteger)[indexPath row]];
                 
                 // Animate the deletion in the tableview.
                 
@@ -855,7 +854,7 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
         
         const NSInteger row = [indexPath row];
         
-        if (row >= 0) [self selectPlaylistAtIndex:row];
+        if (row >= 0) [self selectPlaylistAtIndex:(NSUInteger)row];
     }
     else if (aTableView == tableView)
     {
@@ -969,7 +968,7 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
     
     if (indexPath && [indexPath row] >= 0)
     {
-        [self setSavedPlaylistIndex:[indexPath row]];
+        [self setSavedPlaylistIndex:(NSUInteger)[indexPath row]];
     }
 }
 
@@ -1217,7 +1216,7 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
     
 	if (mutablePlaylist)
     {
-        [[OhmPlaylistManager sharedInstance] deletePlaylist:mutablePlaylist];
+        [(OhmPlaylistManager*)[OhmPlaylistManager sharedInstance] deletePlaylist:mutablePlaylist];
         [self updateDisplayedPlaylists];
     }
     
@@ -1289,7 +1288,7 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
 - (IBAction) removePhoto:(id)sender
 {
     NSUInteger          selectedRow = [[self playlists] indexOfObject:selectedPlaylist];
-    NSIndexPath*        selectedIndex = [NSIndexPath indexPathForRow:selectedRow inSection:0];
+    NSIndexPath*        selectedIndex = [NSIndexPath indexPathForRow:(NSInteger)selectedRow inSection:0];
     UITableViewCell*    selectedCell = [wire cellForRowAtIndexPath:selectedIndex];
     UIImageView*        imageView = (UIImageView*)[selectedCell viewWithTag:imageViewTag];
     
@@ -1594,7 +1593,7 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
     //if (CFStringCompare ((__bridge CFStringRef) mediaType, kUTTypeImage, 0) == kCFCompareEqualTo)
     {
         NSUInteger          selectedRow = [[self playlists] indexOfObject:selectedPlaylist];
-        NSIndexPath*        selectedIndex = [NSIndexPath indexPathForRow:selectedRow inSection:0];
+        NSIndexPath*        selectedIndex = [NSIndexPath indexPathForRow:(NSInteger)selectedRow inSection:0];
         UITableViewCell*    selectedCell = [wire cellForRowAtIndexPath:selectedIndex];
         UIImageView*        imageView = (UIImageView*)[selectedCell viewWithTag:imageViewTag];
         

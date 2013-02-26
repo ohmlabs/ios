@@ -137,7 +137,7 @@ static NSString* const USER_DEFAULTS_QUEUE_TUTORIAL_WAS_SEEN = @"USER_DEFAULTS_Q
 	
 	NSArray* songs = [self songs];
 	
-	return (row >=0 && [songs count]) ? [songs objectAtIndex:row] : nil;
+	return (row >=0 && [songs count]) ? [songs objectAtIndex:(NSUInteger)row] : nil;
 }
 
 - (void) playSongInTableView:(UITableView*)tableView atIndexPath:(NSIndexPath*)indexPath
@@ -478,7 +478,7 @@ static NSString* const USER_DEFAULTS_QUEUE_TUTORIAL_WAS_SEEN = @"USER_DEFAULTS_Q
         
         if (queue)
         {
-            [queue removeSongAtIndex:[indexPath row]];
+            [queue removeSongAtIndex:(NSUInteger)[indexPath row]];
             
             // Animate the deletion in the tableview.
             

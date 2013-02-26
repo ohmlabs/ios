@@ -16,15 +16,15 @@
 	NSString* albumName;
 }
 
-@property (nonatomic, strong, readonly) NSString *title;
-@property (nonatomic, strong, readonly) NSString *artistName;
-@property (nonatomic, strong, readonly) NSString *albumName;
-@property (nonatomic, strong, readonly) NSNumber *playbackDuration;
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) NSString *artistName;
+@property (nonatomic, readonly) NSString *albumName;
+@property (nonatomic, readonly) NSNumber *playbackDuration;
 
 // Uniquely identifies a song so we can check if this song
 // is already in a queue.
-@property (nonatomic, strong, readonly)	NSNumber* identifier;
-@property (nonatomic, strong, readonly)	NSNumber* albumIdentifier;
+@property (nonatomic, readonly)	NSNumber* identifier;
+@property (nonatomic, readonly)	NSNumber* albumIdentifier;
 
 - (id) imageWithSize:(CGSize)aSize;	// Returns artwork for this song.
 

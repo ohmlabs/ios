@@ -11,7 +11,7 @@
 
 @interface DevicePlaylist : Playlist
 
-@property (nonatomic, strong, readonly) MPMediaPlaylist* mediaPlaylist;
+@property (nonatomic, readonly) MPMediaPlaylist* mediaPlaylist;
 
 - (id) initWithMediaPlaylist:(id)mediaPlaylist;
 

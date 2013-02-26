@@ -21,11 +21,11 @@
 	NSMutableArray* songs;
 }
 
-@property (nonatomic, strong, readonly) NSString	*title;
-@property (nonatomic, strong, readonly) NSString	*artistName;            // Will compute a default name if there isn't one in the iPod Library.
-@property (nonatomic, strong, readonly) NSString	*persistentArtistName;  // The named stored in the iPod Library.
+@property (nonatomic, readonly) NSString	*title;
+@property (nonatomic, readonly) NSString	*artistName;            // Will compute a default name if there isn't one in the iPod Library.
+@property (nonatomic, readonly) NSString	*persistentArtistName;  // The named stored in the iPod Library.
 
-@property (nonatomic, strong, readonly) NSArray		*songs;				// All Song objects for this album.
+@property (nonatomic, readonly) NSArray		*songs;				// All Song objects for this album.
 
 - (id) imageWithSize:(CGSize)aSize;										// Returns artwork for this album.
 

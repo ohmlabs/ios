@@ -14,7 +14,7 @@
 
 @interface SimulatorAlbum : Album
 
-@property (nonatomic, strong, readonly)	NSNumber *identifier;		// Only used in simulator to map albumID provided by Song objects to Album objects.
+@property (nonatomic, readonly)	NSNumber *identifier;		// Only used in simulator to map albumID provided by Song objects to Album objects.
 
 - (void) addSimulatorSong:(SimulatorSong*)song;
 

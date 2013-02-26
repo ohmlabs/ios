@@ -321,7 +321,7 @@
 
 - (void) stop
 {
-	[self setNowPlayingIndex:-1];
+	[self setNowPlayingIndex:(NSUInteger)-1];
 }
 
 - (void)skipToNextItem
@@ -363,7 +363,7 @@
     self = [super init];
     if (self)
 	{
-		nowPlayingIndex = -1; paused = YES;
+		nowPlayingIndex = (NSUInteger)-1; paused = YES;
 		
 		[self setUpTimer];
     }

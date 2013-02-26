@@ -235,7 +235,7 @@
 	
 	for (id obj in array)
 	{
-		const NSUInteger sectionNumber = [collation sectionForObject:obj collationStringSelector:sel];
+		const NSUInteger sectionNumber = (NSUInteger)[collation sectionForObject:obj collationStringSelector:sel];
 		
 		NSMutableArray* sectionArray = [outerArray objectAtIndex:sectionNumber];
 		
@@ -431,9 +431,9 @@
 	
 	if ((row >= 0) && (section >= 0))
 	{
-		NSArray* sectionArray = [[self allArtistSections] objectAtIndex:section];
+		NSArray* sectionArray = [[self allArtistSections] objectAtIndex:(NSUInteger)section];
 		
-		return [sectionArray objectAtIndex:row];
+		return [sectionArray objectAtIndex:(NSUInteger)row];
 	}
 	
 	return nil;
@@ -481,9 +481,9 @@
 	
 	if ((row >= 0) && (section >= 0))
 	{
-		NSArray* sectionArray = [[self allAlbumSections] objectAtIndex:section];
+		NSArray* sectionArray = [[self allAlbumSections] objectAtIndex:(NSUInteger)section];
 		
-		return [sectionArray objectAtIndex:row];
+		return [sectionArray objectAtIndex:(NSUInteger)row];
 	}
 	
 	return nil;
@@ -496,9 +496,9 @@
 	
 	if ((row >= 0) && (section >= 0))
 	{
-		NSArray* sectionArray = [[self allSongSections] objectAtIndex:section];
+		NSArray* sectionArray = [[self allSongSections] objectAtIndex:(NSUInteger)section];
 		
-		return [sectionArray objectAtIndex:row];
+		return [sectionArray objectAtIndex:(NSUInteger)row];
 	}
 	
 	return nil;

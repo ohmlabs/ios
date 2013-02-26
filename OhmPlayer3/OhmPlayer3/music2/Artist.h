@@ -23,13 +23,13 @@
     NSString* name;
 }
 
-@property (nonatomic, strong, readonly) NSString *name;
+@property (nonatomic, readonly) NSString *name;
 
-@property (nonatomic, strong, readonly) NSArray *albums;		// All Album for objects this artist
-@property (nonatomic, strong, readonly) NSArray *songs;			// All Song objects for this artist
+@property (nonatomic, readonly) NSArray *albums;		// All Album for objects this artist
+@property (nonatomic, readonly) NSArray *songs;			// All Song objects for this artist
 
-@property (nonatomic, strong, readonly) NSArray *albumNames;	// Convenience method
-@property (nonatomic, strong, readonly) NSArray *songNames;		// Convenience method
+@property (nonatomic, readonly) NSArray *albumNames;	// Convenience method
+@property (nonatomic, readonly) NSArray *songNames;		// Convenience method
 
 - (id) initWithName:(NSString*)name;
 

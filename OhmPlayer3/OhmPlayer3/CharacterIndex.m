@@ -18,7 +18,7 @@
 {
 	// Returns the character at the selected index or the empty string.
 	
-	NSString* charString = (([unicodeCharacters count]) ? [unicodeCharacters objectAtIndex:selectedIndex] : nil);
+	NSString* charString = (([unicodeCharacters count]) ? [unicodeCharacters objectAtIndex:(NSUInteger)selectedIndex] : nil);
 	
 	return (([charString length]) ? [charString characterAtIndex:0] : 'A');
 }
@@ -47,8 +47,6 @@
 	// Adds a glyph subview for each unicode character in this index.
 	
 	if (![unicodeCharacters count]) return;
-	
-	static	const CGFloat MinimumFontSize = 1.0F;
 	
 	const CGFloat height	= self.bounds.size.height;
 	const CGFloat width		= self.bounds.size.width / (CGFloat)[unicodeCharacters count];

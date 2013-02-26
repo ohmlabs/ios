@@ -28,7 +28,7 @@
 @property (nonatomic, assign, readonly) NSUInteger indexOfNowPlayingSong;
 @property (nonatomic, assign, readonly) NSUInteger countOfSongsInQueue;
 @property (nonatomic, assign) NSTimeInterval currentPlaybackTime;
-@property (nonatomic, strong, readonly) Song* nowPlayingSong;
+@property (nonatomic, readonly) Song* nowPlayingSong;
 @property (nonatomic) MPMusicShuffleMode shuffleMode;
 
 - (void) playSong:(Song*)song inCollection:(NSObject<SongCollection>*)songCollection;

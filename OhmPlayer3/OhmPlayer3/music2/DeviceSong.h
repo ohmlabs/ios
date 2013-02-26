@@ -14,7 +14,7 @@
 
 @interface DeviceSong : Song
 
-@property (nonatomic, strong, readonly) MPMediaItem* mediaItem;
+@property (nonatomic, readonly) MPMediaItem* mediaItem;
 
 - (id) initWithMediaItem:(id)mediaItem;
 

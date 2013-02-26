@@ -59,12 +59,12 @@ static NSString* const CELL_REUSE_ID = @"SongsCell";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
- 	return [[self musicLibrary] numberOfSectionsForSongs];
+ 	return (NSInteger)[[self musicLibrary] numberOfSectionsForSongs];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return [[self musicLibrary] numberOfRowsForSongSection:section];
+	return (NSInteger)[[self musicLibrary] numberOfRowsForSongSection:(NSUInteger)section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -92,7 +92,7 @@ static NSString* const CELL_REUSE_ID = @"SongsCell";
 
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-	return [[self musicLibrary] titleForHeaderInSongSection:section];
+	return [[self musicLibrary] titleForHeaderInSongSection:(NSUInteger)section];
 }
 
 - (NSInteger) tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index

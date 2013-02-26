@@ -161,12 +161,12 @@ static NSString* const PLACEHOLDER_ALBUM_IMAGE_NAME = @"default_album_artwork";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
- 	return [[self musicLibrary] numberOfSectionsForAlbums];
+ 	return (NSInteger)[[self musicLibrary] numberOfSectionsForAlbums];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return [[self musicLibrary] numberOfRowsForAlbumSection:section];
+	return (NSInteger)[[self musicLibrary] numberOfRowsForAlbumSection:(NSUInteger)section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -194,7 +194,7 @@ static NSString* const PLACEHOLDER_ALBUM_IMAGE_NAME = @"default_album_artwork";
 
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-	return [[self musicLibrary] titleForHeaderInAlbumSection:section];
+	return [[self musicLibrary] titleForHeaderInAlbumSection:(NSUInteger)section];
 }
 
 - (NSInteger) tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
