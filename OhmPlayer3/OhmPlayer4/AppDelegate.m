@@ -9,12 +9,19 @@
 #import "OhmAppearance.h"
 #import "OhmPlaylistManager.h"
 
+#if USE_FLURRY
+#import "Flurry.h"
+#endif
+
 @implementation AppDelegate
 
 @synthesize window = _window;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application
 {
+#if USE_FLURRY
+    [Flurry startSession:@"X7FVRFRRQJ5VDVJ93BDS"];
+#endif
     
 	[[UIApplication sharedApplication] setStatusBarStyle:[OhmAppearance defaultStatusBarStyle] animated:NO];
 	

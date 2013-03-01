@@ -131,6 +131,8 @@
 		DE5750A715140DBE00FB0D67 /* back_btn_up.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5750A515140DBE00FB0D67 /* back_btn_up.png */; };
 		DE95CC4214F6BD6300F10719 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE95CC4114F6BD6300F10719 /* CoreGraphics.framework */; };
 		DE965869152A139B00902B8A /* OhmSongTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE965868152A139B00902B8A /* OhmSongTableViewController.m */; };
+		DEE966E016E1357E00C40388 /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE966DF16E1357E00C40388 /* libFlurry.a */; };
+		DEE966E316E1382E00C40388 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE966E216E1382E00C40388 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -321,6 +323,9 @@
 		DE95CC4114F6BD6300F10719 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DE965867152A139B00902B8A /* OhmSongTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = OhmSongTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		DE965868152A139B00902B8A /* OhmSongTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = OhmSongTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		DEE966DE16E1357E00C40388 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		DEE966DF16E1357E00C40388 /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
+		DEE966E216E1382E00C40388 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		DEF9C71F14CDEE1D0037918A /* warn.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = warn.xcconfig; sourceTree = "<group>"; };
 		DEF9C72014CDF1720037918A /* DeviceIDs README */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DeviceIDs README"; sourceTree = "<group>"; };
 		DEF9C72414CDF84C0037918A /* ohmPlayer4-debug-ad_hoc.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ohmPlayer4-debug-ad_hoc.xcconfig"; sourceTree = "<group>"; };
@@ -331,33 +336,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEE966E316E1382E00C40388 /* SystemConfiguration.framework in Frameworks */,
 				DE45C6C916D2D94200C321E8 /* Social.framework in Frameworks */,
 				DE95CC4214F6BD6300F10719 /* CoreGraphics.framework in Frameworks */,
 				301C86EB14BFDDFA0053E1F0 /* QuartzCore.framework in Frameworks */,
 				959C5EE514609AC200764EA2 /* UIKit.framework in Frameworks */,
 				959C5EE614609AC200764EA2 /* Foundation.framework in Frameworks */,
 				95F392D314620871003BEA23 /* MediaPlayer.framework in Frameworks */,
+				DEE966E016E1357E00C40388 /* libFlurry.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		950A78221472D5FA00A21E3A /* Third Party */ = {
+		950A78231472D60500A21E3A /* Apple */ = {
 			isa = PBXGroup;
 			children = (
-				950A78231472D60500A21E3A /* Apple Sample Code */,
+				DEE966E416E139CE00C40388 /* Sample Code Snippets */,
 			);
-			name = "Third Party";
-			sourceTree = "<group>";
-		};
-		950A78231472D60500A21E3A /* Apple Sample Code */ = {
-			isa = PBXGroup;
-			children = (
-				950A781E1472D5EC00A21E3A /* AppleSampleCode.h */,
-				950A781F1472D5EC00A21E3A /* AppleSampleCode.m */,
-			);
-			name = "Apple Sample Code";
+			name = Apple;
 			sourceTree = "<group>";
 		};
 		9515A6631427EA8C00EB7ECD /* Gallery List Data Sources */ = {
@@ -389,9 +387,11 @@
 		9588907213F9CCA100AC4269 = {
 			isa = PBXGroup;
 			children = (
+				DEE966E216E1382E00C40388 /* SystemConfiguration.framework */,
 				9588909C13F9CD1E00AC4269 /* Build Configurations */,
 				95A81605143788CE005DAE1A /* Docs */,
 				959C5EE814609AC200764EA2 /* OhmPlayer4 */,
+				DEE966E116E1358B00C40388 /* Third Party Support */,
 				9588908013F9CCA100AC4269 /* Frameworks */,
 				9588907E13F9CCA100AC4269 /* Products */,
 			);
@@ -511,7 +511,6 @@
 				95F2F75F142D2232000C0C47 /* SongsTableViewSupport.m */,
 				9500F12B1406D6B0009C4DBC /* ToggleSegue.h */,
 				9500F12C1406D6B0009C4DBC /* ToggleSegue.m */,
-				950A78221472D5FA00A21E3A /* Third Party */,
 				95324FB4141AC73500D96742 /* Custom Views */,
 				95E13CE9146B632000DCC835 /* Images */,
 				958BDC851451F85800615B3C /* Music - Ohm */,
@@ -728,6 +727,35 @@
 				95FE6DEE153B56A1006EF985 /* SelectPlaylistTableViewController.m */,
 			);
 			name = Screens;
+			sourceTree = "<group>";
+		};
+		DEE966DD16E1357E00C40388 /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				DEE966DE16E1357E00C40388 /* Flurry.h */,
+				DEE966DF16E1357E00C40388 /* libFlurry.a */,
+			);
+			name = Flurry;
+			path = "../../Third Party/Flurry/Flurry";
+			sourceTree = "<group>";
+		};
+		DEE966E116E1358B00C40388 /* Third Party Support */ = {
+			isa = PBXGroup;
+			children = (
+				DEE966DD16E1357E00C40388 /* Flurry */,
+				950A78231472D60500A21E3A /* Apple */,
+			);
+			name = "Third Party Support";
+			path = OhmPlayer4;
+			sourceTree = "<group>";
+		};
+		DEE966E416E139CE00C40388 /* Sample Code Snippets */ = {
+			isa = PBXGroup;
+			children = (
+				950A781E1472D5EC00A21E3A /* AppleSampleCode.h */,
+				950A781F1472D5EC00A21E3A /* AppleSampleCode.m */,
+			);
+			name = "Sample Code Snippets";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1425,6 +1453,10 @@
 			baseConfigurationReference = 959C5EF91460BA0500764EA2 /* ohmPlayer4-debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_ID = com.ohmlabs;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../Third Party/Flurry/Flurry\"",
+				);
 			};
 			name = Debug;
 		};
@@ -1435,6 +1467,10 @@
 				BUNDLE_ID = com.ohmlabs;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ohm Labs, Inc./";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../Third Party/Flurry/Flurry\"",
+				);
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FBF1EEB6-22DF-4E6A-8C2E-F1ADA46B976E";
 			};
@@ -1451,6 +1487,10 @@
 			baseConfigurationReference = DEF9C72414CDF84C0037918A /* ohmPlayer4-debug-ad_hoc.xcconfig */;
 			buildSettings = {
 				BUNDLE_ID = com.ohmlabs;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../Third Party/Flurry/Flurry\"",
+				);
 			};
 			name = "Debug - Ad Hoc";
 		};
