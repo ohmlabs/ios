@@ -3,3 +3,5 @@ INFOPLIST_FILE = OhmPlayer4/OhmPlayer4-Info.plist
 PRODUCT_NAME = Ohm
 WRAPPER_EXTENSION = app
 BUNDLE_ID = com.ohmlabs.ohm
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$(SRCROOT)/../Third\ Party/Crashlytics"
+LIBRARY_SEARCH_PATHS = $(inherited) "$(SRCROOT)/../Third Party/Flurry/Flurry"
