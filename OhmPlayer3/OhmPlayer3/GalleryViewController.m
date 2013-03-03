@@ -19,6 +19,8 @@
 #import "OhmAppearance.h"
 #import "AppState.h"
 
+#import <Crashlytics/Crashlytics.h>
+
 #define SHOW_CELL_SELECTION_FOR_DEBUGGING 0
 
 static NSString* const DEFAULT_ALBUM_ARTWORK_IMAGE_NAME	= @"default_album_artwork";
@@ -1367,6 +1369,10 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
 
 - (IBAction)addAlbumSongs:(id)sender
 {
+#if 1
+    [[Crashlytics sharedInstance] crash];
+#endif
+    
 	[self queueSongsInTableView:songsTableView];
 }
 

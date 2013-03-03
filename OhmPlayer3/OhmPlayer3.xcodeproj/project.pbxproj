@@ -131,8 +131,10 @@
 		DE5750A715140DBE00FB0D67 /* back_btn_up.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5750A515140DBE00FB0D67 /* back_btn_up.png */; };
 		DE95CC4214F6BD6300F10719 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE95CC4114F6BD6300F10719 /* CoreGraphics.framework */; };
 		DE965869152A139B00902B8A /* OhmSongTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE965868152A139B00902B8A /* OhmSongTableViewController.m */; };
+		DED4DEEA16E3E82F00796E87 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED4DEE916E3E82F00796E87 /* Crashlytics.framework */; };
 		DEE966E016E1357E00C40388 /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE966DF16E1357E00C40388 /* libFlurry.a */; };
 		DEE966E316E1382E00C40388 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE966E216E1382E00C40388 /* SystemConfiguration.framework */; };
+		DEFDECA016E14F6300D2D11A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFDEC9F16E14F6300D2D11A /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -323,12 +325,14 @@
 		DE95CC4114F6BD6300F10719 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DE965867152A139B00902B8A /* OhmSongTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = OhmSongTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		DE965868152A139B00902B8A /* OhmSongTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = OhmSongTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		DED4DEE916E3E82F00796E87 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		DEE966DE16E1357E00C40388 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
 		DEE966DF16E1357E00C40388 /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		DEE966E216E1382E00C40388 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		DEF9C71F14CDEE1D0037918A /* warn.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = warn.xcconfig; sourceTree = "<group>"; };
 		DEF9C72014CDF1720037918A /* DeviceIDs README */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DeviceIDs README"; sourceTree = "<group>"; };
 		DEF9C72414CDF84C0037918A /* ohmPlayer4-debug-ad_hoc.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ohmPlayer4-debug-ad_hoc.xcconfig"; sourceTree = "<group>"; };
+		DEFDEC9F16E14F6300D2D11A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +348,8 @@
 				959C5EE614609AC200764EA2 /* Foundation.framework in Frameworks */,
 				95F392D314620871003BEA23 /* MediaPlayer.framework in Frameworks */,
 				DEE966E016E1357E00C40388 /* libFlurry.a in Frameworks */,
+				DEFDECA016E14F6300D2D11A /* Crashlytics.framework in Frameworks */,
+				DED4DEEA16E3E82F00796E87 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +393,6 @@
 		9588907213F9CCA100AC4269 = {
 			isa = PBXGroup;
 			children = (
-				DEE966E216E1382E00C40388 /* SystemConfiguration.framework */,
 				9588909C13F9CD1E00AC4269 /* Build Configurations */,
 				95A81605143788CE005DAE1A /* Docs */,
 				959C5EE814609AC200764EA2 /* OhmPlayer4 */,
@@ -408,6 +413,9 @@
 		9588908013F9CCA100AC4269 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DED4DEE916E3E82F00796E87 /* Crashlytics.framework */,
+				DEE966E216E1382E00C40388 /* SystemConfiguration.framework */,
+				DEFDEC9F16E14F6300D2D11A /* Crashlytics.framework */,
 				DE45C6C816D2D94000C321E8 /* Social.framework */,
 				C86F5C55152BD11F00349B80 /* MobileCoreServices.framework */,
 				301C86DB14BFDDC50053E1F0 /* QuartzCore.framework */,
@@ -768,6 +776,7 @@
 				959C5EDF14609AC200764EA2 /* Sources */,
 				959C5EE014609AC200764EA2 /* Frameworks */,
 				959C5EE114609AC200764EA2 /* Resources */,
+				DEFDECA116E150D500D2D11A /* Crashlytics Script */,
 			);
 			buildRules = (
 			);
@@ -883,6 +892,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DEFDECA116E150D500D2D11A /* Crashlytics Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Crashlytics Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo RUNNING CRASHLYTICS SCRIPT\n./Crashlytics.framework/run 7ca949e35438fc0d1e7a9c0cd2c2adfb5b7ce6df";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		959C5EDF14609AC200764EA2 /* Sources */ = {
@@ -1452,7 +1478,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 959C5EF91460BA0500764EA2 /* ohmPlayer4-debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_ID = com.ohmlabs;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../Third Party/Flurry/Flurry\"",
@@ -1464,9 +1493,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 959C5EFA1460BA0500764EA2 /* ohmPlayer4-release.xcconfig */;
 			buildSettings = {
-				BUNDLE_ID = com.ohmlabs;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ohm Labs, Inc./";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../Third Party/Flurry/Flurry\"",
@@ -1486,7 +1518,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DEF9C72414CDF84C0037918A /* ohmPlayer4-debug-ad_hoc.xcconfig */;
 			buildSettings = {
-				BUNDLE_ID = com.ohmlabs;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../Third Party/Flurry/Flurry\"",
