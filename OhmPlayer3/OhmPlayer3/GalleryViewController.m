@@ -1369,10 +1369,6 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
 
 - (IBAction)addAlbumSongs:(id)sender
 {
-#if 1
-    [[Crashlytics sharedInstance] crash];
-#endif
-    
 	[self queueSongsInTableView:songsTableView];
 }
 
