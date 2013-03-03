@@ -389,8 +389,6 @@
 		9588907213F9CCA100AC4269 = {
 			isa = PBXGroup;
 			children = (
-				DE6B6F2F16E3F1DD000DDCF9 /* MediaPlayer.framework */,
-				DE6B6F2D16E3F1C8000DDCF9 /* UIKit.framework */,
 				9588909C13F9CD1E00AC4269 /* Build Configurations */,
 				95A81605143788CE005DAE1A /* Docs */,
 				959C5EE814609AC200764EA2 /* OhmPlayer4 */,
@@ -411,6 +409,8 @@
 		9588908013F9CCA100AC4269 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE6B6F2F16E3F1DD000DDCF9 /* MediaPlayer.framework */,
+				DE6B6F2D16E3F1C8000DDCF9 /* UIKit.framework */,
 				DED4DEE916E3E82F00796E87 /* Crashlytics.framework */,
 				DEE966E216E1382E00C40388 /* SystemConfiguration.framework */,
 				DE45C6C816D2D94000C321E8 /* Social.framework */,
