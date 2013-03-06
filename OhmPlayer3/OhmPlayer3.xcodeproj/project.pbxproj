@@ -19,6 +19,8 @@
 		30B743CC14930EEF00930E2F /* lists_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 30B743C314930EEF00930E2F /* lists_background.png */; };
 		30BF76DE1496DAF30093D05D /* nav_bar_banner_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 30BF76D71496DAF30093D05D /* nav_bar_banner_home.png */; };
 		30BF76E01496DAF30093D05D /* nav_bar_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 30BF76D91496DAF30093D05D /* nav_bar_banner.png */; };
+		512F406C16E7D09A0023B155 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 512F406B16E7D09A0023B155 /* Default@2x.png */; };
+		512F406E16E7D0BB0023B155 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 512F406D16E7D0BB0023B155 /* Default.png */; };
 		519F192E16E7CB98002FBF46 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 519F192D16E7CB98002FBF46 /* Default-568h@2x.png */; };
 		950A78211472D5EC00A21E3A /* AppleSampleCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 950A781F1472D5EC00A21E3A /* AppleSampleCode.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		95136F5B147855E5008257DE /* music_btn_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95136F57147855E5008257DE /* music_btn_up@2x.png */; };
@@ -150,6 +152,8 @@
 		30B743C414930EEF00930E2F /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/lists_background.png; sourceTree = "<group>"; };
 		30BF76D81496DAF30093D05D /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/nav_bar_banner_home.png; sourceTree = "<group>"; };
 		30BF76DA1496DAF30093D05D /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/nav_bar_banner.png; sourceTree = "<group>"; };
+		512F406B16E7D09A0023B155 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		512F406D16E7D0BB0023B155 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		519F192D16E7CB98002FBF46 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9500F12B1406D6B0009C4DBC /* ToggleSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToggleSegue.h; path = ../OhmPlayer3/ToggleSegue.h; sourceTree = "<group>"; };
 		9500F12C1406D6B0009C4DBC /* ToggleSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToggleSegue.m; path = ../OhmPlayer3/ToggleSegue.m; sourceTree = "<group>"; };
@@ -391,6 +395,8 @@
 		9588907213F9CCA100AC4269 = {
 			isa = PBXGroup;
 			children = (
+				512F406D16E7D0BB0023B155 /* Default.png */,
+				512F406B16E7D09A0023B155 /* Default@2x.png */,
 				519F192D16E7CB98002FBF46 /* Default-568h@2x.png */,
 				9588909C13F9CD1E00AC4269 /* Build Configurations */,
 				95A81605143788CE005DAE1A /* Docs */,
@@ -886,6 +892,8 @@
 				C8160F43155C9FAB00BF2B99 /* shuffle-btn-up@2x.png in Resources */,
 				DE107D1E16D8261C006CDDC9 /* Default-568h@2x.png in Resources */,
 				519F192E16E7CB98002FBF46 /* Default-568h@2x.png in Resources */,
+				512F406C16E7D09A0023B155 /* Default@2x.png in Resources */,
+				512F406E16E7D0BB0023B155 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
