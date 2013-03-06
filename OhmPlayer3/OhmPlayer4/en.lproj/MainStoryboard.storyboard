@@ -1107,7 +1107,6 @@
                 <relationship kind="action" name="addAndShuffleAlbumSongs:"/>
                 <relationship kind="action" name="back:"/>
                 <relationship kind="action" name="search:"/>
-                <relationship kind="action" name="selectedCharacterInIndex:"/>
                 <relationship kind="outlet" name="albumGallery" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="albumTitleLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="artistGallery" candidateClass="UITableView"/>
@@ -1130,7 +1129,6 @@
                 <relationship kind="action" name="compose:"/>
                 <relationship kind="action" name="play"/>
                 <relationship kind="action" name="search:"/>
-                <relationship kind="action" name="segueToPlaylist:"/>
                 <relationship kind="action" name="shuffleAll"/>
                 <relationship kind="action" name="shuffleRoulette:"/>
                 <relationship kind="action" name="skipToNextItem"/>
