@@ -12,15 +12,15 @@
 
 static NSString* const ALL_SONGS_ARTWORK_NAME = @"AllSongs";
 
-@implementation Artist (UnimplementedSelectors)
-
-- (NSString*) title
-{
-    NSAssert(NO, @"Unimplemented seletor %s", __PRETTY_FUNCTION__);
-    return nil;
-}
-
-@end
+//@implementation Artist (UnimplementedSelectors)
+//
+//- (NSString*) title
+//{
+//    NSAssert(NO, @"Unimplemented seletor %s", __PRETTY_FUNCTION__);
+//    return nil;
+//}
+//
+//@end
 
 @implementation Artist
 
