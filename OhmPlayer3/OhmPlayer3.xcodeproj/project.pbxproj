@@ -892,7 +892,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo RUNNING CRASHLYTICS SCRIPT\n#./Crashlytics.framework/run 7ca949e35438fc0d1e7a9c0cd2c2adfb5b7ce6df\n../Third\\ Party/Crashlytics/Crashlytics.framework/run 7ca949e35438fc0d1e7a9c0cd2c2adfb5b7ce6df\n";
+			shellScript = ./OhmPlayer4/scripts/build_phase_crashlytics.sh;
 		};
 /* End PBXShellScriptBuildPhase section */
 
