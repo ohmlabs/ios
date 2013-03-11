@@ -10,7 +10,7 @@
                 <viewController storyboardIdentifier="MusicScreen" id="mcy-mO-vk9" userLabel="Ohm" customClass="NowPlayingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q7P-H4-BPG">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="navigation-bkg@2x.png" id="pZE-fh-aaE">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
@@ -230,8 +230,11 @@
                         <outlet property="albumArtView" destination="RG7-O9-mJM" id="L2m-hk-VoB"/>
                         <outlet property="artistName" destination="mZL-pt-bPr" id="txI-X9-FTT"/>
                         <outlet property="doubleTapRecognizer" destination="oXd-Ov-8DJ" id="xXs-Tc-36F"/>
+                        <outlet property="musicButtonLabel" destination="iGw-fH-aYu" id="CWc-DB-IKe"/>
                         <outlet property="playbackTimeSlider" destination="vW5-JW-5xI" id="TOw-8v-Oi4"/>
+                        <outlet property="playlistButtonLabel" destination="hn1-mF-nTR" id="8PS-1p-ldM"/>
                         <outlet property="popUpPlayerControls" destination="tec-hr-HKg" id="Lcm-95-KFY"/>
+                        <outlet property="queueButtonLabel" destination="P02-JP-WX5" id="dXK-1f-Pud"/>
                         <outlet property="shuffleButton" destination="c3k-oN-CZ0" id="4Y3-eZ-l3k"/>
                         <outlet property="singleTapRecognizer" destination="8iM-LX-Zzd" id="cSl-2n-bvd"/>
                         <outlet property="songTitle" destination="SmP-ox-IaO" id="W1G-Fs-od7"/>
@@ -1107,6 +1110,7 @@
                 <relationship kind="action" name="addAndShuffleAlbumSongs:"/>
                 <relationship kind="action" name="back:"/>
                 <relationship kind="action" name="search:"/>
+                <relationship kind="action" name="selectedCharacterInIndex:"/>
                 <relationship kind="outlet" name="albumGallery" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="albumTitleLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="artistGallery" candidateClass="UITableView"/>
@@ -1129,6 +1133,7 @@
                 <relationship kind="action" name="compose:"/>
                 <relationship kind="action" name="play"/>
                 <relationship kind="action" name="search:"/>
+                <relationship kind="action" name="segueToPlaylist:"/>
                 <relationship kind="action" name="shuffleAll"/>
                 <relationship kind="action" name="shuffleRoulette:"/>
                 <relationship kind="action" name="skipToNextItem"/>
@@ -1141,8 +1146,11 @@
                 <relationship kind="outlet" name="albumArtView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="artistName" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="doubleTapRecognizer" candidateClass="UIGestureRecognizer"/>
+                <relationship kind="outlet" name="musicButtonLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="playbackTimeSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="playlistButtonLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="popUpPlayerControls" candidateClass="UIView"/>
+                <relationship kind="outlet" name="queueButtonLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="shuffleButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="singleTapRecognizer" candidateClass="UIGestureRecognizer"/>
                 <relationship kind="outlet" name="songNumber" candidateClass="UILabel"/>
@@ -1194,6 +1202,7 @@
         <class className="QueueViewController" superclassName="OhmSongTableViewTableController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/QueueViewController.h"/>
             <relationships>
+                <relationship kind="action" name="back:"/>
                 <relationship kind="action" name="handleToolbarAction:"/>
                 <relationship kind="outlet" name="editButton" candidateClass="UIBarButtonItem"/>
             </relationships>
@@ -1211,7 +1220,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="fJV-vI-iig"/>
         <segue reference="TbP-gF-pq4"/>
-        <segue reference="Mph-bv-Q8q"/>
     </inferredMetricsTieBreakers>
 </document>

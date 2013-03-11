@@ -20,6 +20,9 @@
 #import "SongsTableViewSupport.h"
 #import "NowPlayingTutorialViewController.h"
 
+// Turn this on to create a launch image of the main screen...
+#define LAUNCH_IMAGE_SUPPORT 0
+
 @interface NowPlayingViewController (ForwardDeclarations)
 
 - (void) updateCurrentPlayingItem;
@@ -54,6 +57,9 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
 @synthesize doubleTapRecognizer;
 @synthesize shuffleButton;
 @synthesize tutorialController;
+@synthesize playlistButtonLabel;
+@synthesize musicButtonLabel;
+@synthesize queueButtonLabel;
 
 - (void)didReceiveMemoryWarning
 {
@@ -628,6 +634,20 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
                         forState:UIControlStateNormal];
 	
 	[super viewWillAppear:animated];
+    
+#if LAUNCH_IMAGE_SUPPORT
+    // Remove text from the launch screen.
+    
+    self.playlistButtonLabel.text = @"";
+    self.musicButtonLabel.text = @"";
+    self.queueButtonLabel.text = @"";
+    
+    // Remove the status bar. Note: UIKit will adjust the height of the view's frame after it's loaded
+    // but before it appears. In the viewWillAppear: method, we need to adjust the view's frame to
+    // accomodate for the missing status bar.
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+#endif
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -644,6 +664,31 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
 	[self setUpPlaybackUpdateTimer];
 
 	[super viewDidAppear:animated];
+    
+#if LAUNCH_IMAGE_SUPPORT
+    // Shift the main view down to make room for this missing status bar. Also shrink the height of the view so
+    // that controls at the bottom are not moved offscreen.
+    
+    static CGFloat const HEIGHT_OF_IPHONE_STATUS_BAR = 20; // Note: the height of the status bar is not available when it's hidden...
+    static CGFloat const WIDTH_OF_IPHONE_SCREEN = 320;
+    
+    CGRect frame = self.view.frame;
+    frame.origin.y += HEIGHT_OF_IPHONE_STATUS_BAR;
+    frame.size.height -= HEIGHT_OF_IPHONE_STATUS_BAR;
+    self.view.frame = frame;
+    
+    // Hide the white background revealed by the missing status bar.
+    
+    const CGRect statusBarFrame = CGRectMake(0, 0, WIDTH_OF_IPHONE_SCREEN, HEIGHT_OF_IPHONE_STATUS_BAR);
+    
+    UIView* blackPanel = [[UIView alloc] initWithFrame:statusBarFrame];
+    blackPanel.backgroundColor = [UIColor blackColor];
+    
+    UIView* win = self.view.window;
+    NSParameterAssert(win);
+    
+    [win addSubview:blackPanel];
+#endif
 }
 
 - (void) viewDidDisappear:(BOOL)animated

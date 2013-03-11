@@ -28,6 +28,10 @@
 @property (strong, nonatomic) IBOutlet UISlider *playbackTimeSlider;
 @property (strong, nonatomic) IBOutlet UIButton *shuffleButton;
 
+@property (strong, nonatomic) IBOutlet UILabel* playlistButtonLabel;
+@property (strong, nonatomic) IBOutlet UILabel* musicButtonLabel;
+@property (strong, nonatomic) IBOutlet UILabel* queueButtonLabel;
+
 @property (strong, nonatomic) IBOutlet UIView* albumArtView;
 @property (strong, nonatomic) IBOutlet UIView* addToQueueControl;
 @property (strong, nonatomic) IBOutlet UIView* popUpPlayerControls;
