@@ -11,6 +11,22 @@
 #import "SimulatorSong.h"
 #import "SimulatorPlaylist.h"
 
+@implementation SimulatorMusicLibrary (UnimplementedSelectors)
+
+- (NSString*) name
+{
+    NSAssert(NO, @"Unimplemented seletor %s", __PRETTY_FUNCTION__);
+    return nil;
+}
+
+- (NSString*) title
+{
+    NSAssert(NO, @"Unimplemented seletor %s", __PRETTY_FUNCTION__);
+    return nil;
+}
+
+@end
+
 #pragma mark AlbumInfo
 
 @interface SimulatorAlbumInfo : NSObject

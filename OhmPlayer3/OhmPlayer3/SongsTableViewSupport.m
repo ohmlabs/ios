@@ -13,6 +13,15 @@
 
 static NSString* const ADD_BUTTON_IMAGE_NAME = @"add_button";
 
+@implementation SongsTableViewSupport (UnimplementedSelectors)
+
+- (void) addSongButtonTapped:(id)sender
+{
+    NSAssert(NO, @"Unimplemented seletor %s", __PRETTY_FUNCTION__);
+}
+
+@end
+
 @implementation SongsTableViewSupport
 
 #pragma mark Protected Methods
