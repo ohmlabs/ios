@@ -18,7 +18,7 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="nowplaying_asset.png" id="sMd-AH-fR4">
                                 <rect key="frame" x="0.0" y="67" width="320" height="349"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SBg-0y-j64" userLabel="Lists">
                                 <rect key="frame" x="27" y="6" width="55" height="44"/>
@@ -115,7 +115,7 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="nowplaying_back@2x.png" id="SVb-cA-amj">
                                 <rect key="frame" x="0.0" y="369" width="320" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Song Title" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="12" id="SmP-ox-IaO">
                                 <rect key="frame" x="61" y="390" width="200" height="21"/>
@@ -281,7 +281,7 @@
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="lists-images@2x.png" id="N3f-ja-I7w">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="252"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="PRESS &amp; HOLD ON ITEM" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="eHe-ay-Uzl">
                                 <rect key="frame" x="20" y="0.0" width="157" height="24"/>
@@ -353,7 +353,7 @@
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="nowplaying-tutorial-images.png" id="HjG-Qz-bKx">
                                 <rect key="frame" x="0.0" y="163" width="320" height="109"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="DOUBLE TAP TO PLAY/PAUSE" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" id="rFu-Q9-UKM">
                                 <rect key="frame" x="89" y="101" width="143" height="54"/>
@@ -1089,131 +1089,6 @@
         <image name="tweet-btn-down@2x.png" width="70" height="49"/>
         <image name="tweet-btn-up@2x.png" width="70" height="49"/>
     </resources>
-    <classes>
-        <class className="CharacterIndex" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CharacterIndex.h"/>
-        </class>
-        <class className="GalleryListViewController" superclassName="OhmSongTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GalleryListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="back:"/>
-                <relationship kind="action" name="segueToNowPlayingScreen:"/>
-                <relationship kind="action" name="shuffleAll"/>
-                <relationship kind="outlet" name="tabBar" candidateClass="UITabBar"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="GalleryViewController" superclassName="OhmSongTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GalleryViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addAlbumSongs:"/>
-                <relationship kind="action" name="addAndShuffleAlbumSongs:"/>
-                <relationship kind="action" name="back:"/>
-                <relationship kind="action" name="search:"/>
-                <relationship kind="action" name="selectedCharacterInIndex:"/>
-                <relationship kind="outlet" name="albumGallery" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="albumTitleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="artistGallery" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="buildLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="characterIndex" candidateClass="CharacterIndex"/>
-                <relationship kind="outlet" name="prototypeAlbumCell" candidateClass="UIView"/>
-                <relationship kind="outlet" name="songsTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="NowPlayingTutorialViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NowPlayingTutorialViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="tapAction:"/>
-            </relationships>
-        </class>
-        <class className="NowPlayingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NowPlayingViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addToQueue:"/>
-                <relationship kind="action" name="compose:"/>
-                <relationship kind="action" name="play"/>
-                <relationship kind="action" name="search:"/>
-                <relationship kind="action" name="segueToPlaylist:"/>
-                <relationship kind="action" name="shuffleAll"/>
-                <relationship kind="action" name="shuffleRoulette:"/>
-                <relationship kind="action" name="skipToNextItem"/>
-                <relationship kind="action" name="skipToPreviousItem"/>
-                <relationship kind="action" name="sliderDidChange:" candidateClass="UISlider"/>
-                <relationship kind="action" name="toggleMusicPlaying:"/>
-                <relationship kind="action" name="togglePlayerControls:"/>
-                <relationship kind="outlet" name="addToQueueControl" candidateClass="UIView"/>
-                <relationship kind="outlet" name="airplayControllView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="albumArtView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="artistName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="doubleTapRecognizer" candidateClass="UIGestureRecognizer"/>
-                <relationship kind="outlet" name="musicButtonLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="playbackTimeSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="playlistButtonLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="popUpPlayerControls" candidateClass="UIView"/>
-                <relationship kind="outlet" name="queueButtonLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="shuffleButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="singleTapRecognizer" candidateClass="UIGestureRecognizer"/>
-                <relationship kind="outlet" name="songNumber" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="songTitle" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeElapsed" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeRemaining" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="volumeControlView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="OhmSongTableViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OhmSongTableViewController.h"/>
-        </class>
-        <class className="OhmSongTableViewTableController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OhmSongTableViewTableController.h"/>
-        </class>
-        <class className="PlaylistsTutorialViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlaylistsTutorialViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="tapAction:"/>
-                <relationship kind="outlet" name="backgroundView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="PlaylistsViewController" superclassName="OhmSongTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlaylistsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="action:"/>
-                <relationship kind="action" name="addPlaylist:"/>
-                <relationship kind="action" name="clearPlaylist:"/>
-                <relationship kind="action" name="copyPlaylist:"/>
-                <relationship kind="action" name="deletePlaylist:"/>
-                <relationship kind="action" name="doneEditingPlaylist:"/>
-                <relationship kind="action" name="editPlaylist:"/>
-                <relationship kind="action" name="segueToMusicScreen:"/>
-                <relationship kind="action" name="shufflePlaylist:"/>
-                <relationship kind="outlet" name="ohmPlaylistHeaderView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="playlistHeaderView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="playlistNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="playlistSongCountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="wire" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="QueueTutorialViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QueueTutorialViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="tapAction:"/>
-            </relationships>
-        </class>
-        <class className="QueueViewController" superclassName="OhmSongTableViewTableController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QueueViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="back:"/>
-                <relationship kind="action" name="handleToolbarAction:"/>
-                <relationship kind="outlet" name="editButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="SelectPlaylistTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectPlaylistTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
