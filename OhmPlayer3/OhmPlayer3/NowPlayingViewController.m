@@ -9,6 +9,7 @@
 
 #import <MediaPlayer/MediaPlayer.h>
 #import <Twitter/Twitter.h>
+#import <Crashlytics/Crashlytics.h>
 
 #import "MusicPlayer.h"
 #import "Song.h"
@@ -28,6 +29,18 @@
 - (void) updateCurrentPlayingItem;
 
 @end
+
+@interface NowPlayingViewController ()
+
+@property (nonatomic, assign) NSUInteger navBarTapCount;
+
+@end
+
+#if DEBUG
+static NSUInteger const MAX_NAV_BAR_TAP_COUNT = 8;
+#else
+static NSUInteger const MAX_NAV_BAR_TAP_COUNT = INT_MAX;
+#endif
 
 static NSString* const NAV_BAR_BACKGROUND_IMAGE		= @"titlebar-Ohm";
 static NSString* const NAV_BAR_RIGHT_BUTTON_IMAGE	= @"search_btn_up";
@@ -60,6 +73,7 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
 @synthesize playlistButtonLabel;
 @synthesize musicButtonLabel;
 @synthesize queueButtonLabel;
+@synthesize navBarTapCount;
 
 - (void)didReceiveMemoryWarning
 {
@@ -556,6 +570,17 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
 	if (image)
 	{
 		UINavigationBar* navBar = self.navigationController.navigationBar;
+#if USE_CRASHLYTICS
+
+        UINavigationItem* navItem = self.navigationItem;
+        
+        UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
+        //button.backgroundColor = [UIColor greenColor];
+        button.frame = CGRectMake(0, 0, 300, navBar.frame.size.height);
+        [button addTarget:self action:@selector(navbarTapped) forControlEvents:UIControlEventTouchUpInside];
+                
+        navItem.titleView = button;
+#endif
 		
 		[navBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 	}
@@ -665,6 +690,8 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
 
 	[super viewDidAppear:animated];
     
+    navBarTapCount = 0; // Reset the tap account when the view reappears.
+
 #if LAUNCH_IMAGE_SUPPORT
     // Shift the main view down to make room for this missing status bar. Also shrink the height of the view so
     // that controls at the bottom are not moved offscreen.
@@ -826,6 +853,18 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
 	[[self musicPlayer] skipToNextItem];
     [[self musicPlayer] play];
     [self.shuffleButton setImage:[UIImage imageNamed:@"shuffle-btn-down"] forState:UIControlStateNormal];
+}
+
+- (IBAction)navbarTapped
+{    
+#if USE_CRASHLYTICS
+    navBarTapCount++;
+    
+    if (navBarTapCount >= MAX_NAV_BAR_TAP_COUNT)
+    {
+        [[Crashlytics sharedInstance] crash];
+    }
+#endif
 }
 
 @end
