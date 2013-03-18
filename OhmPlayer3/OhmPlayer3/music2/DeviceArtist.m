@@ -111,8 +111,11 @@
 	if ((self = [super init]))
 	{
 		mediaItemCollection = aMediaItemCollection;
+        
+        self->name = [[self->mediaItemCollection representativeItem] valueForProperty:MPMediaItemPropertyArtist];
 	}
 	
+#if 0
     // Actively load the media properties in the background for performance reasons.
     // We don't want to wait until we scroll to a corresponding object to compute
     // these properties using [slow] synchronous database accesses to the iPod music library.
@@ -149,6 +152,7 @@
                            });
         }
     });
+#endif
     
 	return self;
 }
