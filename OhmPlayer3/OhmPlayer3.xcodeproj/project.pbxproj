@@ -314,6 +314,7 @@
 		DE6B6F2D16E3F1C8000DDCF9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		DE6B6F2F16E3F1DD000DDCF9 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
 		DE823D4714CDE40D002FAFA9 /* DeviceIDs.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = DeviceIDs.txt; path = ../DeviceIDs.txt; sourceTree = "<group>"; };
+		DE9566F016FB733800478887 /* build_phase_crashlytics.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = build_phase_crashlytics.sh; path = OhmPlayer4/scripts/build_phase_crashlytics.sh; sourceTree = SOURCE_ROOT; };
 		DE95CC4114F6BD6300F10719 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DE965867152A139B00902B8A /* OhmSongTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = OhmSongTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		DE965868152A139B00902B8A /* OhmSongTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = OhmSongTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -533,6 +534,7 @@
 		959C5EFC1460BA5A00764EA2 /* ohmPlayer4 */ = {
 			isa = PBXGroup;
 			children = (
+				DE9566F116FB733F00478887 /* Build phase scripts */,
 				959C5EF81460B92400764EA2 /* ohmPlayer4.xcconfig */,
 				959C5EF91460BA0500764EA2 /* ohmPlayer4-debug.xcconfig */,
 				DEF9C72414CDF84C0037918A /* ohmPlayer4-debug-ad_hoc.xcconfig */,
@@ -674,6 +676,14 @@
 				C8F655621559975C0074BC36 /* gallery-bottom.png */,
 			);
 			name = Gallery;
+			sourceTree = "<group>";
+		};
+		DE9566F116FB733F00478887 /* Build phase scripts */ = {
+			isa = PBXGroup;
+			children = (
+				DE9566F016FB733800478887 /* build_phase_crashlytics.sh */,
+			);
+			name = "Build phase scripts";
 			sourceTree = "<group>";
 		};
 		DE95CC4314F6BF1700F10719 /* Playlists */ = {
