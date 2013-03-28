@@ -1469,8 +1469,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 959C5EFA1460BA0500764EA2 /* ohmPlayer4-release.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ohm Labs, Inc./";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FBF1EEB6-22DF-4E6A-8C2E-F1ADA46B976E";
 			};
 			name = Release;
 		};
