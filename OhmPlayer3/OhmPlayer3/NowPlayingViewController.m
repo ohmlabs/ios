@@ -570,7 +570,7 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
 	if (image)
 	{
 		UINavigationBar* navBar = self.navigationController.navigationBar;
-#if USE_CRASHLYTICS
+#if 1 // USE_CRASHLYTICS
 
         UINavigationItem* navItem = self.navigationItem;
         
@@ -857,14 +857,36 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
 
 - (IBAction)navbarTapped
 {    
-#if USE_CRASHLYTICS
+#if 1 // USE_CRASHLYTICS
+#if 0
     navBarTapCount++;
     
     if (navBarTapCount >= MAX_NAV_BAR_TAP_COUNT)
     {
-        [[Crashlytics sharedInstance] crash];
+        [self crash];
     }
+#else
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Crashlytics test" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Crash!", nil];
+    
+    [alert show];
+    
 #endif
+    
+#endif
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{    
+    if (buttonIndex == 1)
+    {
+        NSLog(@"CRASH!");
+        [self crash];
+    }
+}
+
+- (void) crash
+{
+    [[Crashlytics sharedInstance] crash];
 }
 
 @end

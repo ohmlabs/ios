@@ -23,12 +23,12 @@
 
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+#if 1 //USE_CRASHLYTICS
+    [Crashlytics startWithAPIKey:@"7ca949e35438fc0d1e7a9c0cd2c2adfb5b7ce6df"];
+#endif
+
 #if USE_FLURRY
     [Flurry startSession:@"X7FVRFRRQJ5VDVJ93BDS"];
-#endif
-    
-#if USE_CRASHLYTICS
-    [Crashlytics startWithAPIKey:@"7ca949e35438fc0d1e7a9c0cd2c2adfb5b7ce6df"];
 #endif
 
 	[[UIApplication sharedApplication] setStatusBarStyle:[OhmAppearance defaultStatusBarStyle] animated:NO];
