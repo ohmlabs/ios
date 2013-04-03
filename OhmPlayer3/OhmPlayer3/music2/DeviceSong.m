@@ -100,8 +100,16 @@
 	if ((self = [super init]))
 	{
 		mediaItem = aMediaItem;
+        
+        MPMediaItem* item = mediaItem;
+    
+        self->title       = [item valueForProperty:MPMediaItemPropertyTitle];
+        self->artistName  = [item valueForProperty:MPMediaItemPropertyArtist];
+        self->albumName   = [item valueForProperty:MPMediaItemPropertyAlbumTitle];
+
 	}
 	
+#if 0
     // Actively load the media properties in the background for performance reasons.
     // We don't want to wait until we scroll to a corresponding object to compute
     // these properties using [slow] synchronous database accesses to the iPod music library.
@@ -124,7 +132,8 @@
                            self->albumName = anAlbumName;
                        });
     });
-
+#endif
+    
 	return self;
 }
 
