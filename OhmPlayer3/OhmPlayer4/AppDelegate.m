@@ -23,7 +23,7 @@
 
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-#if 1 //USE_CRASHLYTICS
+#if USE_CRASHLYTICS
     [Crashlytics startWithAPIKey:@"7ca949e35438fc0d1e7a9c0cd2c2adfb5b7ce6df"];
 #endif
 

@@ -570,7 +570,7 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
 	if (image)
 	{
 		UINavigationBar* navBar = self.navigationController.navigationBar;
-#if 1 // USE_CRASHLYTICS
+#if USE_CRASHLYTICS
 
         UINavigationItem* navItem = self.navigationItem;
         
@@ -857,7 +857,7 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
 
 - (IBAction)navbarTapped
 {    
-#if 1 // USE_CRASHLYTICS
+#if USE_CRASHLYTICS
 #if 0
     navBarTapCount++;
     
