@@ -18,8 +18,17 @@
 
 @end
 
+@interface DeviceMusicPlayer ()
+
+@property (nonatomic, strong) Song* _nowPlayingSong;
+@property (nonatomic, strong) MPMediaItem* _previousNowPlayingMediaItem;
+
+@end
 
 @implementation DeviceMusicPlayer
+
+@synthesize _nowPlayingSong;
+@synthesize _previousNowPlayingMediaItem;
 
 #pragma mark Properties - MusicPlayer
 
@@ -47,12 +56,19 @@
 {
 	MPMediaItem* nowPlayingItem = [self musicPlayer].nowPlayingItem;
 	
-	if (nowPlayingItem)
-	{
-		return [[DeviceSong alloc] initWithMediaItem:nowPlayingItem];
+    // If the now playing item has not changed since last time, use a cached object so that we're
+    // not constantly allocating a new one every clock tick...
+    // Note: I'd like to just cache the object, but the music player's nowPlayingItem property is volatile
+    // and it's not clear that we can always invalid the cache when we need to...
+    
+    if (_previousNowPlayingMediaItem != nowPlayingItem)
+    {
+        _previousNowPlayingMediaItem = nowPlayingItem;
+        
+        self._nowPlayingSong = (nowPlayingItem) ? [[DeviceSong alloc] initWithMediaItem:nowPlayingItem] : nil;
 	}
 	
-	return nil;
+	return self._nowPlayingSong;
 }
 
 - (void) setNowPlayingSong:(Song*)song
