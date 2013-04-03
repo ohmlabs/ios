@@ -91,4 +91,9 @@
 	 */
 }
 
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+{
+    //NSLog(@"Got memory warning!");
+}
+
 @end
