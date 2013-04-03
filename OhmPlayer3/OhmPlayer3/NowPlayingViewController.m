@@ -33,6 +33,7 @@
 @interface NowPlayingViewController ()
 
 @property (nonatomic, assign) NSUInteger navBarTapCount;
+@property (nonatomic, strong) NSCalendar* _currentCalendar;
 
 @end
 
@@ -74,6 +75,7 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
 @synthesize musicButtonLabel;
 @synthesize queueButtonLabel;
 @synthesize navBarTapCount;
+@synthesize _currentCalendar;
 
 - (void)didReceiveMemoryWarning
 {
@@ -260,6 +262,16 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
 	return [NSString stringWithFormat:NSLocalizedString(@"%ld of %ld", @"<index of item> of <total item count>"), (long)indexOfCurrentSong + 1, (long)countOfCurrentSongs];
 }
 
+- (NSCalendar*) currentCalendar
+{
+    if (!self._currentCalendar)
+    {
+        self._currentCalendar = [NSCalendar currentCalendar];
+    }
+    
+    return self._currentCalendar;
+}
+
 - (NSString*) formattedInterval:(NSTimeInterval)interval
 {	
     // The individual date components should never be formatted as negatives
@@ -269,7 +281,7 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
     interval = fabs(interval);
     
 	// Get the localized system calendar.
-	NSCalendar *usersCalendar = [NSCalendar currentCalendar];
+	NSCalendar *usersCalendar = [self currentCalendar];
 
     NSDate *now     = [[NSDate alloc] init];
     NSDate *date    = [[NSDate alloc] initWithTimeInterval:interval sinceDate:now]; 
