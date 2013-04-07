@@ -870,7 +870,7 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
 - (IBAction)navbarTapped
 {    
 #if USE_CRASHLYTICS
-#if 0
+#if 1
     navBarTapCount++;
     
     if (navBarTapCount >= MAX_NAV_BAR_TAP_COUNT)
