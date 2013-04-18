@@ -801,8 +801,10 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
         
     }];
     
+    NSParameterAssert(tweetViewController);
+    
     // Present the tweet composition view controller modally.
-    [self presentViewController:tweetViewController animated:YES completion:nil];
+    if (tweetViewController) [self presentViewController:tweetViewController animated:YES completion:nil];
 }
 
 - (IBAction)search:(id)sender
