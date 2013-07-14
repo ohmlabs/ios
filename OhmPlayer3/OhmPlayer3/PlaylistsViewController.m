@@ -388,7 +388,7 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
 {
 	const NSInteger row = [indexPath row];
 	
-	return (row >= 0) ? [[self songs] objectAtIndex:(NSUInteger)row] : nil;
+	return ([[self songs] count] && row >= 0) ? [[self songs] objectAtIndex:(NSUInteger)row] : nil;
 }
 
 - (void) playSongInTableView:(UITableView*)aTableView atIndexPath:(NSIndexPath*)indexPath
@@ -650,7 +650,7 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
 
 - (void)didSelectPlaylist:(Playlist*)playlist
 {	
-	if (playlist && !playlist.readonly && [playlist isKindOfClass:[MutablePlaylist class]])
+	if (longPressedSong && playlist && !playlist.readonly && [playlist isKindOfClass:[MutablePlaylist class]])
 	{
 		[(MutablePlaylist*)playlist addSong:longPressedSong];
 		
@@ -760,6 +760,7 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
         MusicLibrarySong* song = ([songs count] && row >=0) ? [songs objectAtIndex:(NSUInteger)row] : nil;
         
         // Note: even if there's no song, we still want to configure the label...
+        // hmm: if there's no song, why are we attempting to display an empty playlist?
         [self configureSongCell:cell forSong:song];
         
         return cell;
