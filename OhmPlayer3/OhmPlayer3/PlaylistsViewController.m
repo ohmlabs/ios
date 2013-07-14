@@ -343,6 +343,10 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
 	{
 		albumAndArtist = [NSString stringWithFormat:@"%@", song.albumName];
 	}
+    else
+    {
+		albumAndArtist = NSLocalizedString(@"Unknown artist and album", nil);
+    }
 	
 	cell.detailTextLabel.text = albumAndArtist;
 
@@ -753,12 +757,10 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
         
         const NSInteger row = [indexPath row];
         
-        MusicLibrarySong* song = (row >=0) ? [songs objectAtIndex:(NSUInteger)row] : nil;
+        MusicLibrarySong* song = ([songs count] && row >=0) ? [songs objectAtIndex:(NSUInteger)row] : nil;
         
-        if (song)
-        {
-            [self configureSongCell:cell forSong:song];
-        }
+        // Note: even if there's no song, we still want to configure the label...
+        [self configureSongCell:cell forSong:song];
         
         return cell;
     }
