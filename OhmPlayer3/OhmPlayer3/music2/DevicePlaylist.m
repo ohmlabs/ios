@@ -92,7 +92,7 @@
 
 - (id) songCollection
 {
-	return [[MPMediaItemCollection alloc] initWithItems:mediaPlaylist.items];
+	return ([mediaPlaylist.items count]) ? [[MPMediaItemCollection alloc] initWithItems:mediaPlaylist.items] : nil;
 }
 
 #pragma mark Object Life Cycle
