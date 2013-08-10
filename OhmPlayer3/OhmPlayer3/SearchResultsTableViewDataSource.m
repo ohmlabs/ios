@@ -80,7 +80,9 @@ static NSString* const PLACEHOLDER_ALBUM_IMAGE_NAME = @"default_album_artwork";
 
 - (NSString*) imageCacheKeyForArtistName:(NSString*)artistName andAlbumName:(NSString*)albumName
 {		
-	return ([artistName length] && [albumName length]) ? [NSString stringWithFormat:@"%@+%@", artistName, albumName] : nil;
+	NSString* s = ([artistName length] && [albumName length]) ? [NSString stringWithFormat:@"%@+%@", artistName, albumName] : nil;
+    
+    return [s stringByReplacingOccurrencesOfString:@"@" withString:@"-"];
 }
 
 - (NSMutableDictionary*) imageCache
