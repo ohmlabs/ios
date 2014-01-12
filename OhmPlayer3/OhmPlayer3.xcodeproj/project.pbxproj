@@ -790,6 +790,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Ohm Labs";
+				TargetAttributes = {
+					959C5EE214609AC200764EA2 = {
+						DevelopmentTeam = T2LEW4HN36;
+					};
+				};
 			};
 			buildConfigurationList = 9588907713F9CCA100AC4269 /* Build configuration list for PBXProject "OhmPlayer3" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1462,6 +1467,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 959C5EF91460BA0500764EA2 /* ohmPlayer4-debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1469,6 +1477,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 959C5EFA1460BA0500764EA2 /* ohmPlayer4-release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -1482,6 +1493,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DEF9C72414CDF84C0037918A /* ohmPlayer4-debug-ad_hoc.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				PROVISIONING_PROFILE = "";
 			};
 			name = "Debug - Ad Hoc";
 		};

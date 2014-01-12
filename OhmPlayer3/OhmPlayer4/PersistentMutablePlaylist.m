@@ -124,7 +124,7 @@ static NSString* const KEY_IMAGE_DATA = @"KEY_IMAGE_DATA";
     
 	// If the memento already has a persistent filename, use it.
 	// Otherwise, we assign one.
-	if (![[state valueForKey:KEY_FILENAME] length])
+	if (![state valueForKey:KEY_FILENAME])
 	{
 		[state setValue:[super identifier] forKey:KEY_FILENAME];
 	}

@@ -289,7 +289,7 @@ static NSString* const USER_DEFAULTS_NOW_PLAYING_TUTORIAL_WAS_SEEN = @"USER_DEFA
 	// Breakdown into hours, minutes and seconds.
 	NSCalendarUnit calendarUnits =  (NSCalendarUnit)(NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit);
 	
-	NSDateComponents *dateComponents = [usersCalendar components:calendarUnits fromDate:now toDate:date options:0];
+	NSDateComponents *dateComponents = [usersCalendar components:calendarUnits fromDate:now toDate:date options:(NSCalendarOptions)0];
     
 	const NSInteger hour	= [dateComponents hour];
 	const NSInteger minute	= [dateComponents minute];

@@ -24,10 +24,10 @@
 
 @implementation MutablePlaylist
 
-- (void) setName:(NSString*)aName
-{
-    super.name = aName;
-}
+//- (void) setName:(NSString*)aName
+//{
+//    super.name = aName;
+//}
 
 - (NSString*) name
 {
