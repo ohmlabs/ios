@@ -1,0 +1,14 @@
+{
+  "name": "skrollr-stylesheets",
+  "homepage": "https://github.com/Prinzhorn/skrollr-stylesheets",
+  "version": "0.0.5",
+  "_release": "0.0.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.5",
+    "commit": "cb9c7dec9023a05997007e1b5713ac69d07ffdfc"
+  },
+  "_source": "git://github.com/Prinzhorn/skrollr-stylesheets.git",
+  "_target": "~0.0.4",
+  "_originalSource": "skrollr-stylesheets"
+}
