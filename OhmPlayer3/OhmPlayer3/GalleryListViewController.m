@@ -27,6 +27,16 @@
 
 #import "OhmTargetConditionals.h"
 
+#undef NSParameterAssert
+#define NSParameterAssert(condition)    ({\
+do {\
+_Pragma("clang diagnostic push")\
+_Pragma("clang diagnostic ignored \"-Wcstring-format-directive\"")\
+NSAssert((condition), @"Invalid parameter not satisfying: %s", #condition);\
+_Pragma("clang diagnostic pop")\
+} while(0);\
+})
+
 // IMPORTANT: These indexes must match those in the corresponding storyboard.
 
 enum {ARTISTS_TAB_INDEX = 0, ALBUMS_TAB_INDEX = 1 , SONGS_TAB_INDEX = 2};
@@ -40,9 +50,9 @@ static NSString* const NAV_BAR_LEFT_BUTTON_IMAGE					= @"back_btn_up";
 static NSString* const SHUFFLE_BUTTOM_IMAGE							= @"shuffleAll_btn_up";
 static NSString* const NAV_BAR_BACKGROUND_IMAGE						= @"titlebar";
 
-static const CGFloat SHUFFLE_ALL_FONT_SIZE			= 36.0F;
+//static const CGFloat SHUFFLE_ALL_FONT_SIZE			= 36.0F;
 
-static const CGFloat DEFAULT_TABLEVIEWCELL_HEIGHT	= 44.0F;
+//static const CGFloat DEFAULT_TABLEVIEWCELL_HEIGHT	= 44.0F;
 
 @interface GalleryListViewController (ForwardDeclarations)
 
@@ -450,6 +460,7 @@ static const CGFloat DEFAULT_TABLEVIEWCELL_HEIGHT	= 44.0F;
 }
 
 #pragma mark Gesture Handling Methods
+#pragma GCC diagnostic ignored "-Wgnu"
 
 - (void) handleLongPress:(UIGestureRecognizer *)gestureRecognizer
 {

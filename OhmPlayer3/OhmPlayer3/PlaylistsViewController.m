@@ -22,6 +22,20 @@
 #import "SelectPlaylistTableViewController.h"
 #import "PlaylistsTutorialViewController.h"
 
+
+// FIXME: Used to silence Xcode 6.3 beta - should be eventually removed.
+#undef NSParameterAssert
+#define NSParameterAssert(condition)	({\
+do {\
+_Pragma("clang diagnostic push")\
+_Pragma("clang diagnostic ignored \"-Wcstring-format-directive\"")\
+NSAssert((condition), @"Invalid parameter not satisfying: %s", #condition);\
+_Pragma("clang diagnostic pop")\
+} while(0);\
+})
+
+
+
 @interface PlaylistColors : NSObject
 
 @property (nonatomic, strong) NSArray* colors;
@@ -127,6 +141,7 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
 @synthesize tutorialController;
 
 #pragma mark Protected Methods
+#pragma GCC diagnostic ignored "-Wgnu"
 
 - (MusicLibrary*) musicLibrary
 {
@@ -997,6 +1012,8 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
 }
 
 #pragma mark UIAlertView Delegate Methods - Protected
+
+#pragma GCC diagnostic ignored "-Wgnu"
 
 - (NSString*) newPlaylistName
 {

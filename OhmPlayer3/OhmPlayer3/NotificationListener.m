@@ -7,6 +7,17 @@
 
 #import "NotificationListener.h"
 
+// FIXME: Used to silence Xcode 6.3 beta - should be eventually removed.
+#undef NSParameterAssert
+#define NSParameterAssert(condition)	({\
+do {\
+_Pragma("clang diagnostic push")\
+_Pragma("clang diagnostic ignored \"-Wcstring-format-directive\"")\
+NSAssert((condition), @"Invalid parameter not satisfying: %s", #condition);\
+_Pragma("clang diagnostic pop")\
+} while(0);\
+})
+
 @implementation NotificationListener
 
 #pragma mark Notification - Handlers
@@ -19,6 +30,7 @@
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 	[target performSelector:notificationHandler withObject:note];
 #pragma clang diagnostic pop
+#pragma GCC diagnostic ignored "-Wgnu"
 }
 
 #pragma mark Notification - Registration

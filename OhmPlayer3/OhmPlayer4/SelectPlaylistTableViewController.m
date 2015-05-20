@@ -12,6 +12,17 @@
 #import "Playlist.h"
 #import <QuartzCore/QuartzCore.h> // For CALayer access...
 
+// FIXME: Used to silence Xcode 6.3 beta - should be eventually removed.
+#undef NSParameterAssert
+#define NSParameterAssert(condition)	({\
+do {\
+_Pragma("clang diagnostic push")\
+_Pragma("clang diagnostic ignored \"-Wcstring-format-directive\"")\
+NSAssert((condition), @"Invalid parameter not satisfying: %s", #condition);\
+_Pragma("clang diagnostic pop")\
+} while(0);\
+})
+
 static NSString* const SELECT_PLAYLIST_VIEWCONTROLLER_ID	= @"SelectPlaylistTableViewControllerID";
 static NSString* const SELECT_PLAYLIST_VC_STORYBOARD		= @"MainStoryboard";
 
@@ -22,6 +33,7 @@ static NSString* const SELECT_PLAYLIST_VC_STORYBOARD		= @"MainStoryboard";
 @synthesize selectPlaylistDelegate;
 
 #pragma mark Protected Methods
+#pragma GCC diagnostic ignored "-Wgnu"
 
 - (void) setUpNavigationBarAppearance
 {

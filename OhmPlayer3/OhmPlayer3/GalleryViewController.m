@@ -21,6 +21,16 @@
 
 #import <Crashlytics/Crashlytics.h>
 
+#undef NSParameterAssert
+#define NSParameterAssert(condition)    ({\
+do {\
+_Pragma("clang diagnostic push")\
+_Pragma("clang diagnostic ignored \"-Wcstring-format-directive\"")\
+NSAssert((condition), @"Invalid parameter not satisfying: %s", #condition);\
+_Pragma("clang diagnostic pop")\
+} while(0);\
+})
+
 #define SHOW_CELL_SELECTION_FOR_DEBUGGING 0
 
 static NSString* const DEFAULT_ALBUM_ARTWORK_IMAGE_NAME	= @"default_album_artwork";
@@ -905,6 +915,8 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
 
 #pragma mark Protected Methods - NavigationBar Setup
 
+#pragma GCC diagnostic ignored "-Wgnu"
+
 - (void) setUpNavigationBarAppearance
 {
 	UIImage* barBackgroundImage = [UIImage imageNamed:NAV_BAR_BACKGROUND_IMAGE];
@@ -1007,11 +1019,11 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
 
 - (void) setUpBuildLabel
 {
-#if DEBUG
-    buildLabel.text = [NSString stringWithFormat:@"%s\r%s", __DATE__, __TIME__];
-#else
+//#if DEBUG
+//    buildLabel.text = [NSString stringWithFormat:@"%s\r%s", __DATE__, __TIME__];
+//#else
     [buildLabel removeFromSuperview];
-#endif
+//#endif
 }
 
 - (void) alertSong:(Song*)song addedToPlaylist:(Playlist*)playlist
@@ -1094,6 +1106,8 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
 }
 
 #pragma mark Gesture Handling Methods
+
+#pragma GCC diagnostic ignored "-Wgnu"
 
 - (void) handleLongPress:(UIGestureRecognizer *)gestureRecognizer
 {

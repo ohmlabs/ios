@@ -15,6 +15,17 @@
 #import "AppState.h"
 #import "QueueTutorialViewController.h"
 
+// FIXME: Used to silence Xcode 6.3 beta - should be eventually removed.
+#undef NSParameterAssert
+#define NSParameterAssert(condition)	({\
+do {\
+_Pragma("clang diagnostic push")\
+_Pragma("clang diagnostic ignored \"-Wcstring-format-directive\"")\
+NSAssert((condition), @"Invalid parameter not satisfying: %s", #condition);\
+_Pragma("clang diagnostic pop")\
+} while(0);\
+})
+
 static NSString* const QUEUE_SONG_CELL_REUSE_ID		= @"QueueCell";
 static NSString* const NAV_BAR_BACKGROUND_IMAGE		= @"titlebar";
 static NSString* const NAV_BAR_RIGHT_BUTTON_IMAGE	= @"music_btn_up";
@@ -32,6 +43,8 @@ static NSString* const USER_DEFAULTS_QUEUE_TUTORIAL_WAS_SEEN = @"USER_DEFAULTS_Q
 @synthesize tutorialController;
 
 #pragma mark Protected Methods
+
+#pragma GCC diagnostic ignored "-Wgnu"
 
 - (MusicLibrary*) musicLibrary
 {

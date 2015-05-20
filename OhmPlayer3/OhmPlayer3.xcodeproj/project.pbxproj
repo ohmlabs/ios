@@ -788,7 +788,7 @@
 		9588907413F9CCA100AC4269 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Ohm Labs";
 			};
 			buildConfigurationList = 9588907713F9CCA100AC4269 /* Build configuration list for PBXProject "OhmPlayer3" */;
@@ -1449,12 +1449,15 @@
 		9588909713F9CCA200AC4269 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-Wno-gnu";
 			};
 			name = Debug;
 		};
 		9588909813F9CCA200AC4269 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_CFLAGS = "-Wno-gnu";
 			};
 			name = Release;
 		};
@@ -1475,6 +1478,7 @@
 		DEF9C72114CDF80A0037918A /* Debug - Ad Hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_CFLAGS = "-Wno-gnu";
 			};
 			name = "Debug - Ad Hoc";
 		};

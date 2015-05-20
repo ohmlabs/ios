@@ -10,6 +10,17 @@
 #import "DeviceSong.h"
 #import "OhmAppearance.h"
 
+// FIXME: Used to silence Xcode 6.3 beta - should be eventually removed.
+#undef NSParameterAssert
+#define NSParameterAssert(condition)	({\
+do {\
+_Pragma("clang diagnostic push")\
+_Pragma("clang diagnostic ignored \"-Wcstring-format-directive\"")\
+NSAssert((condition), @"Invalid parameter not satisfying: %s", #condition);\
+_Pragma("clang diagnostic pop")\
+} while(0);\
+})
+
 @implementation DeviceArtist
 
 #pragma mark Properties
@@ -103,6 +114,7 @@
 }
 
 #pragma mark Object Life Cycle
+#pragma GCC diagnostic ignored "-Wgnu"
 
 - (id) initWithMediaItemCollection:(id)aMediaItemCollection
 {

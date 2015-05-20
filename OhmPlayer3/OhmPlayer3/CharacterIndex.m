@@ -10,9 +10,25 @@
 
 #include <objc/message.h> // For objc_msgSend
 
+// FIXME: Used to silence Xcode 6.3 beta - should be eventually removed.
+#undef NSParameterAssert
+#define NSParameterAssert(condition)	({\
+do {\
+_Pragma("clang diagnostic push")\
+_Pragma("clang diagnostic ignored \"-Wcstring-format-directive\"")\
+NSAssert((condition), @"Invalid parameter not satisfying: %s", #condition);\
+_Pragma("clang diagnostic pop")\
+} while(0);\
+})
+
 @implementation CharacterIndex
 
 #pragma mark Properties
+
+#pragma GCC diagnostic ignored "-Wgnu"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused"
 
 - (unichar) selectedCharacter
 {

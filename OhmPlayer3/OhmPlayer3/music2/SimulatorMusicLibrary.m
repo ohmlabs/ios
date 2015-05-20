@@ -11,17 +11,30 @@
 #import "SimulatorSong.h"
 #import "SimulatorPlaylist.h"
 
+// FIXME: Used to silence Xcode 6.3 beta - should be eventually removed.
+#undef NSParameterAssert
+#define NSParameterAssert(condition)	({\
+do {\
+_Pragma("clang diagnostic push")\
+_Pragma("clang diagnostic ignored \"-Wcstring-format-directive\"")\
+NSAssert((condition), @"Invalid parameter not satisfying: %s", #condition);\
+_Pragma("clang diagnostic pop")\
+} while(0);\
+})
+
 @implementation SimulatorMusicLibrary (UnimplementedSelectors)
+
+#pragma GCC diagnostic ignored "-Wgnu"
 
 - (NSString*) name
 {
-    NSAssert(NO, @"Unimplemented seletor %s", __PRETTY_FUNCTION__);
+    //NSAssert(NO, @"Unimplemented seletor %s", __PRETTY_FUNCTION__);
     return nil;
 }
 
 - (NSString*) title
 {
-    NSAssert(NO, @"Unimplemented seletor %s", __PRETTY_FUNCTION__);
+   // NSAssert(NO, @"Unimplemented seletor %s", __PRETTY_FUNCTION__);
     return nil;
 }
 

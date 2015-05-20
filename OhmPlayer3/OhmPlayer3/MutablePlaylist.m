@@ -10,6 +10,17 @@
 #import "Album.h"
 #import "Song.h"
 
+// FIXME: Used to silence Xcode 6.3 beta - should be eventually removed.
+#undef NSParameterAssert
+#define NSParameterAssert(condition)	({\
+do {\
+_Pragma("clang diagnostic push")\
+_Pragma("clang diagnostic ignored \"-Wcstring-format-directive\"")\
+NSAssert((condition), @"Invalid parameter not satisfying: %s", #condition);\
+_Pragma("clang diagnostic pop")\
+} while(0);\
+})
+
 @interface Playlist (ProtectedMethods)
 
 - (NSMutableSet*) songIDsInPlaylist;
@@ -18,11 +29,14 @@
 
 @property (nonatomic, strong, readwrite) NSArray		*songs;		// All Song objects for this playlist.
 @property (nonatomic, strong, readwrite) NSArray		*songIDs;	// All persistent Song IDs for this playlist.
+@property (nonatomic, strong, readwrite) NSString        *name;
 
 @end
 
 
 @implementation MutablePlaylist
+
+#pragma GCC diagnostic ignored "-Wgnu"
 
 - (void) setName:(NSString*)aName
 {

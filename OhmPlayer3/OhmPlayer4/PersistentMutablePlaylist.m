@@ -8,6 +8,18 @@
 
 #import "MusicLibrary.h"
 
+
+// FIXME: Used to silence Xcode 6.3 beta - should be eventually removed.
+#undef NSParameterAssert
+#define NSParameterAssert(condition)	({\
+do {\
+_Pragma("clang diagnostic push")\
+_Pragma("clang diagnostic ignored \"-Wcstring-format-directive\"")\
+NSAssert((condition), @"Invalid parameter not satisfying: %s", #condition);\
+_Pragma("clang diagnostic pop")\
+} while(0);\
+})
+
 static NSString* const KEY_NAME     = @"KEY_NAME";
 static NSString* const KEY_SONG_IDS = @"KEY_SONG_IDS";
 static NSString* const KEY_IS_QUEUE = @"KEY_IS_QUEUE";
@@ -17,6 +29,7 @@ static NSString* const KEY_IMAGE_DATA = @"KEY_IMAGE_DATA";
 @implementation PersistentMutablePlaylist
 
 #pragma mark MutablePlaylist Properties - Overriden
+#pragma GCC diagnostic ignored "-Wgnu"
 
 - (void) setName:(NSString*)name
 {
@@ -112,9 +125,9 @@ static NSString* const KEY_IMAGE_DATA = @"KEY_IMAGE_DATA";
 - (id) initWithMemento:(NSDictionary*)memento
 {
     state = [memento mutableCopy];
-	
-	NSString* playlistName = [state valueForKey:KEY_NAME];
-	 
+    
+    NSString* playlistName = [state valueForKey:KEY_NAME];
+    
     NSParameterAssert(playlistName);
     
     if (!playlistName)
@@ -122,30 +135,30 @@ static NSString* const KEY_IMAGE_DATA = @"KEY_IMAGE_DATA";
         return nil;
     }
     
-	// If the memento already has a persistent filename, use it.
-	// Otherwise, we assign one.
-	if (![[state valueForKey:KEY_FILENAME] length])
-	{
-		[state setValue:[super identifier] forKey:KEY_FILENAME];
-	}
-	
+    // If the memento already has a persistent filename, use it.
+    // Otherwise, we assign one.
+    if (![state valueForKey:KEY_FILENAME])
+    {
+        [state setValue:[super identifier] forKey:KEY_FILENAME];
+    }
+    
     self = [super initWithName:playlistName];
     if (self) {
         
         // We need to turn the playlist song IDs into song objects if we can.
-		
-		NSArray* IDs = [state valueForKey:KEY_SONG_IDS];
-		
-		for (NSNumber* identifier in IDs)
-		{
-			Song* song = [[self musicLibrary] songForSongID:identifier];
-			
-			if (song)
-			{
-				[self addSong:song];
-			}
-			
-		}
+        
+        NSArray* IDs = [state valueForKey:KEY_SONG_IDS];
+        
+        for (NSNumber* identifier in IDs)
+        {
+            Song* song = [[self musicLibrary] songForSongID:identifier];
+            
+            if (song)
+            {
+                [self addSong:song];
+            }
+            
+        }
     }
     
     return self;
