@@ -38,6 +38,7 @@
  *
  **/
 OBJC_EXTERN void CLSLog(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
+OBJC_EXTERN void CLSLogv(NSString *format, va_list args) NS_FORMAT_FUNCTION(1,0);
 
 /**
  *
@@ -46,6 +47,8 @@ OBJC_EXTERN void CLSLog(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
  *
  **/
 OBJC_EXTERN void CLSNSLog(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
+OBJC_EXTERN void CLSNSLogv(NSString *format, va_list args) NS_FORMAT_FUNCTION(1,0);
+
 
 @protocol CrashlyticsDelegate;
 
@@ -170,6 +173,16 @@ OBJC_EXTERN void CLSNSLog(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
  **/
 @property (nonatomic, readonly) NSDate *crashedOnDate;
 
+/**
+ * Returns the os version that the application crashed on.
+ **/
+@property (nonatomic, readonly) NSString *OSVersion;
+
+/**
+ * Returns the os build version that the application crashed on.
+ **/
+@property (nonatomic, readonly) NSString *OSBuildVersion;
+
 @end
 
 /**
@@ -205,3 +218,8 @@ OBJC_EXTERN void CLSNSLog(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
 - (void)crashlytics:(Crashlytics *)crashlytics didDetectCrashDuringPreviousExecution:(id <CLSCrashReport>)crash;
 
 @end
+
+/**
+ *  `CrashlyticsKit` can be used as a parameter to `[Fabric with:@[CrashlyticsKit]];` in Objective-C. In Swift, simply use `Crashlytics()`
+ */
+#define CrashlyticsKit [Crashlytics sharedInstance]

@@ -1255,6 +1255,8 @@ static NSString* const ArtistDidChangeNotification = @"ArtistDidChangeNotificati
 }
 
 #pragma mark - UITableViewDelegate Methods
+#pragma clang diagnostic ignored "-Wnullable-to-nonnull-conversion"
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

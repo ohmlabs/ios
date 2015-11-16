@@ -161,6 +161,7 @@ static NSString* const NAV_BAR_BACKGROUND_IMAGE						= @"titlebar";
 }
 
 #pragma mark Protected Methods
+#pragma clang diagnostic ignored "-Wnullable-to-nonnull-conversion"
 
 - (MusicPlayer*) musicPlayer
 {

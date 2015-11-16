@@ -101,7 +101,7 @@ _Pragma("clang diagnostic pop")\
 #pragma mark Protected Methods
 
 - (MPMusicPlayerController*) musicPlayer
-{	
+{
 	if (!player)
 	{
 		player = [MPMusicPlayerController iPodMusicPlayer];
@@ -114,7 +114,7 @@ _Pragma("clang diagnostic pop")\
 
 - (NSArray*) mediaItemsFromSongCollection:(NSObject<SongCollection>*)collection
 {
-	return (collection) ? [[collection songCollection] items] : [NSArray array];
+	return (collection) ? [collection songCollection] : [NSArray array];
 }
 
 - (void) internal_setQueueWithItemCollection:(NSObject<SongCollection>*)collection

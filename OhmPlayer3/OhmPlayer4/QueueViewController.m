@@ -521,6 +521,7 @@ static NSString* const USER_DEFAULTS_QUEUE_TUTORIAL_WAS_SEEN = @"USER_DEFAULTS_Q
 }
 
 #pragma mark UITableViewDelegate Methods
+#pragma clang diagnostic ignored "-Wnullable-to-nonnull-conversion"
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

@@ -20,6 +20,8 @@
 		512F406C16E7D09A0023B155 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 512F406B16E7D09A0023B155 /* Default@2x.png */; };
 		512F406E16E7D0BB0023B155 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 512F406D16E7D0BB0023B155 /* Default.png */; };
 		519F192E16E7CB98002FBF46 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 519F192D16E7CB98002FBF46 /* Default-568h@2x.png */; };
+		553825B41BECA4E700587ED8 /* libZtx_iOS-fat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 553825B31BECA4E700587ED8 /* libZtx_iOS-fat.a */; };
+		553825B61BECA52200587ED8 /* libZtx_iOS-fat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 553825B51BECA52200587ED8 /* libZtx_iOS-fat.a */; };
 		950A78211472D5EC00A21E3A /* AppleSampleCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 950A781F1472D5EC00A21E3A /* AppleSampleCode.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		95136F5B147855E5008257DE /* music_btn_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95136F57147855E5008257DE /* music_btn_up@2x.png */; };
 		95136F5C147855E5008257DE /* music_btn_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 95136F59147855E5008257DE /* music_btn_up.png */; };
@@ -147,6 +149,8 @@
 		512F406B16E7D09A0023B155 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		512F406D16E7D0BB0023B155 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		519F192D16E7CB98002FBF46 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		553825B31BECA4E700587ED8 /* libZtx_iOS-fat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libZtx_iOS-fat.a"; sourceTree = "<group>"; };
+		553825B51BECA52200587ED8 /* libZtx_iOS-fat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libZtx_iOS-fat.a"; path = "../libZtx_iOS-fat.a"; sourceTree = "<group>"; };
 		9500F12B1406D6B0009C4DBC /* ToggleSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToggleSegue.h; path = ../OhmPlayer3/ToggleSegue.h; sourceTree = "<group>"; };
 		9500F12C1406D6B0009C4DBC /* ToggleSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToggleSegue.m; path = ../OhmPlayer3/ToggleSegue.m; sourceTree = "<group>"; };
 		95037AFB14216F96005C0D8D /* AppState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppState.h; path = ../OhmPlayer3/AppState.h; sourceTree = "<group>"; };
@@ -332,6 +336,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				553825B41BECA4E700587ED8 /* libZtx_iOS-fat.a in Frameworks */,
+				553825B61BECA52200587ED8 /* libZtx_iOS-fat.a in Frameworks */,
 				DE6B6F3016E3F1DD000DDCF9 /* MediaPlayer.framework in Frameworks */,
 				DE6B6F2E16E3F1C8000DDCF9 /* UIKit.framework in Frameworks */,
 				DEE966E316E1382E00C40388 /* SystemConfiguration.framework in Frameworks */,
@@ -523,6 +529,7 @@
 		959C5EE914609AC200764EA2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				553825B31BECA4E700587ED8 /* libZtx_iOS-fat.a */,
 				959C5EEA14609AC200764EA2 /* OhmPlayer4-Info.plist */,
 				959C5EEB14609AC200764EA2 /* InfoPlist.strings */,
 				959C5EEE14609AC200764EA2 /* main.m */,
@@ -745,6 +752,7 @@
 		DEE966E116E1358B00C40388 /* Third Party Support */ = {
 			isa = PBXGroup;
 			children = (
+				553825B51BECA52200587ED8 /* libZtx_iOS-fat.a */,
 				DEE966DD16E1357E00C40388 /* Flurry */,
 				950A78231472D60500A21E3A /* Apple */,
 			);
@@ -1465,6 +1473,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 959C5EF91460BA0500764EA2 /* ohmPlayer4-debug.xcconfig */;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OhmPlayer4",
+					"$(PROJECT_DIR)",
+				);
 			};
 			name = Debug;
 		};
@@ -1472,6 +1485,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 959C5EFA1460BA0500764EA2 /* ohmPlayer4-release.xcconfig */;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OhmPlayer4",
+					"$(PROJECT_DIR)",
+				);
 			};
 			name = Release;
 		};
@@ -1486,6 +1504,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DEF9C72414CDF84C0037918A /* ohmPlayer4-debug-ad_hoc.xcconfig */;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OhmPlayer4",
+					"$(PROJECT_DIR)",
+				);
 			};
 			name = "Debug - Ad Hoc";
 		};

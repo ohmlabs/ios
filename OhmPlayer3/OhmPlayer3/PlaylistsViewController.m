@@ -858,6 +858,7 @@ enum {imageViewTag = 1, fullShadeTag = 2, halfShadeTag = 3, playlistTitleTag = 4
 }
 
 #pragma mark UITableViewDelegate Methods
+#pragma clang diagnostic ignored "-Wnullable-to-nonnull-conversion"
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
